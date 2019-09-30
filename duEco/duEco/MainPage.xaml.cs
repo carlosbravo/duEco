@@ -12,6 +12,7 @@ namespace duEco
         public MainPage()
         {
             InitializeComponent();
+            //Agregar funcionalidad
         }
     }
 }
