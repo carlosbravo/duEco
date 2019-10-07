@@ -11,12 +11,14 @@ namespace duEco
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new Index();
+            MainPage = new NavigationPage(new Index());
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
+            
         }
 
         protected override void OnSleep()

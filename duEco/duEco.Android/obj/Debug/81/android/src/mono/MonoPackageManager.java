@@ -109,6 +109,7 @@ class MonoPackageManager_Resources {
 		"duEco.Android.dll",
 		"duEco.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Runtime.dll",

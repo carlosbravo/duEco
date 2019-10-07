@@ -4,6 +4,7 @@ D:\ProyectosGit\duEco\duEco\duEco.Android\obj\Debug\81\android\assets\FormsViewG
 D:\ProyectosGit\duEco\duEco\duEco.Android\obj\Debug\81\android\assets\Java.Interop.dll
 D:\ProyectosGit\duEco\duEco\duEco.Android\obj\Debug\81\android\assets\Mono.Android.dll
 D:\ProyectosGit\duEco\duEco\duEco.Android\obj\Debug\81\android\assets\mscorlib.dll
+D:\ProyectosGit\duEco\duEco\duEco.Android\obj\Debug\81\android\assets\Newtonsoft.Json.dll
 D:\ProyectosGit\duEco\duEco\duEco.Android\obj\Debug\81\android\assets\System.Core.dll
 D:\ProyectosGit\duEco\duEco\duEco.Android\obj\Debug\81\android\assets\System.dll
 D:\ProyectosGit\duEco\duEco\duEco.Android\obj\Debug\81\android\assets\System.Xml.dll

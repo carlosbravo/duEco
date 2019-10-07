@@ -1,12 +1,12 @@
 D:\ProyectosGit\duEco\duEco\duEco\bin\Debug\netstandard2.0\duEco.deps.json
 D:\ProyectosGit\duEco\duEco\duEco\bin\Debug\netstandard2.0\duEco.dll
 D:\ProyectosGit\duEco\duEco\duEco\bin\Debug\netstandard2.0\duEco.pdb
-D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\duEco.csprojAssemblyReference.cache
 D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\duEco.csproj.CoreCompileInputs.cache
 D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\duEco.AssemblyInfoInputs.cache
 D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\duEco.AssemblyInfo.cs
-D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\XamlC.stamp
 D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\duEco.dll
 D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\duEco.pdb
+D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\duEco.csprojAssemblyReference.cache
+D:\ProyectosGit\duEco\duEco\duEco\obj\Debug\netstandard2.0\XamlC.stamp
