@@ -42,6 +42,8 @@ namespace duEco
                 Navigation.PushAsync(new Registro());
             };
 
+            
+
             var email = new Entry
             {
                 Placeholder = "E-Mail",
@@ -58,10 +60,12 @@ namespace duEco
                 Text = "Login"
             };
 
+            login.Clicked += OnButtonClicked;
+
             // With the `PushModalAsync` method we navigate the user
             // the the orders page and do not give them an option to
             // navigate back to the Homepage by clicking the back button
-            
+
             //login.Clicked += (sender, e) => {
             //    Navigation.PushModalAsync(new OrdersPage());
             //};
@@ -72,6 +76,11 @@ namespace duEco
                 Spacing = 10,
                 Children = { title, email, password, login, signupButton, aboutButton }
             };
+        }
+
+        private void OnButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ViewModels.Home());
         }
     }
 }
