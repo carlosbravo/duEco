@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="duEco.View.Home"
+             Title="Home">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightSteelBlue">
+                
+            <Label Text="Usuario " BackgroundColor="ForestGreen" TextColor="White"></Label>            
+            <Entry Text="{Binding nombre}"/>
+
+            <Frame ClassId="frmMisHuertas" BackgroundColor="DarkGreen">
+                <Button Text="MIS HUERTAS" BackgroundColor="ForestGreen" />
+            </Frame>
+            <Frame BackgroundColor="DarkGreen">
+                    <Button x:Name="btnCatalogo" Text="CATALOGO" BackgroundColor="AliceBlue" TextColor="DarkOrange"/>
+            </Frame>
+            <Frame BackgroundColor="DarkGreen">
+                <Button Text="RECONOCER PLANTA" BackgroundColor="ForestGreen" />
+            </Frame>
+            <Frame BackgroundColor="DarkGreen">
+                <Button Text="CALENDARIO" BackgroundColor="ForestGreen" />
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+    
+</ContentPage>

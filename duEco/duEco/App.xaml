@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="duEco.App">
     <Application.Resources>
-
+        <StyleSheet Source="Style/styles.css" />
     </Application.Resources>
 </Application>

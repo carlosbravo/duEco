@@ -42,15 +42,20 @@ namespace duEco
                 Navigation.PushAsync(new Registro());
             };
 
-            
+            Model.UsuarioModel userTest = new Model.UsuarioModel
+            {
+                nombre = "John Doe", email="john.d@mail.com", password="1234"
+            };
 
             var email = new Entry
             {
+                Text = userTest.email,
                 Placeholder = "E-Mail",
             };
 
             var password = new Entry
             {
+                Text = userTest.password,
                 Placeholder = "Contraseña",
                 IsPassword = true
             };
@@ -80,7 +85,7 @@ namespace duEco
 
         private void OnButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ViewModels.Home());
+            Navigation.PushAsync(new View.Home());
         }
     }
 }

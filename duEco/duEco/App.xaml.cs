@@ -12,7 +12,8 @@ namespace duEco
             InitializeComponent();
 
             //MainPage = new Index();
-            MainPage = new NavigationPage(new Index());
+            //MainPage = new NavigationPage(new Index());
+            MainPage = new NavigationPage(new View.Home());
         }
 
         protected override void OnStart()

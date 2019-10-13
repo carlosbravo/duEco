@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="duEco.View.VerPlanta"
+             Title="Informacion">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="AliceBlue">
+                <Label Text="duEco"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Image x:Name="ImagenPortada" />
+                <Label x:Name="NombrePlanta" TextColor="#539539" />
+                <Label x:Name="Descripcion" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
+                <TableView Intent="Settings">
+                    <TableRoot>
+                        <TableSection Title="Mas Info">
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="" />
+                                    <Label Text="lorem ipsum..."
+                                     TextColor="#032C5B" />
+                                    <Label Text="right"
+                                     HorizontalOptions="EndAndExpand"
+                                     TextColor="#75D0E3" />
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
