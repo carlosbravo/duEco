@@ -1,16 +1,7 @@
 {
-  "version": 3,
+  "version": 2,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
-      "Newtonsoft.Json/12.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
       "Xamarin.Forms/3.4.0.1008975": {
         "type": "package",
         "compile": {
@@ -136,29 +127,10 @@
       },
       "duEco/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "Xamarin.Forms": "3.4.0.1008975"
-        },
-        "compile": {
-          "bin/placeholder/duEco.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/duEco.dll": {}
-        }
+        "framework": "Unsupported,Version=v0.0"
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
-      "Newtonsoft.Json/12.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
       "Xamarin.Forms/3.4.0.1008975": {
         "type": "package",
         "compile": {
@@ -284,29 +256,10 @@
       },
       "duEco/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "Xamarin.Forms": "3.4.0.1008975"
-        },
-        "compile": {
-          "bin/placeholder/duEco.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/duEco.dll": {}
-        }
+        "framework": "Unsupported,Version=v0.0"
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
-      "Newtonsoft.Json/12.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
       "Xamarin.Forms/3.4.0.1008975": {
         "type": "package",
         "compile": {
@@ -432,29 +385,10 @@
       },
       "duEco/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "Xamarin.Forms": "3.4.0.1008975"
-        },
-        "compile": {
-          "bin/placeholder/duEco.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/duEco.dll": {}
-        }
+        "framework": "Unsupported,Version=v0.0"
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
-      "Newtonsoft.Json/12.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
       "Xamarin.Forms/3.4.0.1008975": {
         "type": "package",
         "compile": {
@@ -580,57 +514,16 @@
       },
       "duEco/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "Xamarin.Forms": "3.4.0.1008975"
-        },
-        "compile": {
-          "bin/placeholder/duEco.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/duEco.dll": {}
-        }
+        "framework": "Unsupported,Version=v0.0"
       }
     }
   },
   "libraries": {
-    "Newtonsoft.Json/12.0.2": {
-      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "type": "package",
-      "path": "newtonsoft.json/12.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.2.nupkg.sha512",
-        "newtonsoft.json.nuspec"
-      ]
-    },
     "Xamarin.Forms/3.4.0.1008975": {
-      "sha512": "tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
+      "sha512": "036/h8HtzRFgTrfhY57IeHoYRsPTO2XTA6uUFdmZzw2QR1sdszfofhI9HrCJTRx6fCzmjPg5Cxk5chYrjKarNw==",
       "type": "package",
       "path": "xamarin.forms/3.4.0.1008975",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "build/Xamarin.Forms.DefaultItems.props",
         "build/Xamarin.Forms.DefaultItems.targets",
@@ -784,37 +677,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Charlie\\.nuget\\packages\\": {}
+    "C:\\Users\\cbravo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProyectosGit\\duEco\\duEco\\duEco.iOS\\duEco.iOS.csproj",
+      "projectUniqueName": "D:\\duEco\\duEco\\duEco.iOS\\duEco.iOS.csproj",
       "projectName": "duEco.iOS",
-      "projectPath": "D:\\ProyectosGit\\duEco\\duEco\\duEco.iOS\\duEco.iOS.csproj",
-      "packagesPath": "C:\\Users\\Charlie\\.nuget\\packages\\",
-      "outputPath": "D:\\ProyectosGit\\duEco\\duEco\\duEco.iOS\\obj\\",
+      "projectPath": "D:\\duEco\\duEco\\duEco.iOS\\duEco.iOS.csproj",
+      "outputPath": "D:\\duEco\\duEco\\duEco.iOS\\obj\\",
       "projectStyle": "PackageReference",
-      "skipContentFileWrite": true,
-      "configFilePaths": [
-        "C:\\Users\\Charlie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-      ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
-      "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
-      },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\ProyectosGit\\duEco\\duEco\\duEco\\duEco.csproj": {
-              "projectPath": "D:\\ProyectosGit\\duEco\\duEco\\duEco\\duEco.csproj"
+            "D:\\duEco\\duEco\\duEco\\duEco.csproj": {
+              "projectPath": "D:\\duEco\\duEco\\duEco\\duEco.csproj"
             }
           }
         }
+      }
+    },
+    "dependencies": {
+      "Xamarin.Forms": {
+        "target": "Package",
+        "version": "3.4.0.1008975"
       }
     },
     "frameworks": {
@@ -822,7 +711,7 @@
         "dependencies": {
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.4.0.1008975, )"
+            "version": "3.4.0.1008975"
           }
         }
       }
