@@ -1,13 +1,18 @@
-﻿using System;
+﻿using duEco.Entidades;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace duEco.Model
 {
+   
     public class UsuarioModel : INotifyPropertyChanged
-    {
+    {       
         private string Nombre;
 
         public string nombre
@@ -23,7 +28,7 @@ namespace duEco.Model
             get { return Email; }
             set { Email = value; OnPropertyChanged(); }
         }
-
+              
         private string Password;
 
         public string password
@@ -32,11 +37,64 @@ namespace duEco.Model
             set { Password = value; OnPropertyChanged(); }
         }
 
+        #region SQLite
+        private static string _dbName;
+        private static string _path;
+        private static SQLiteConnection _db;
+        
+        internal static bool CrearUsuario(UsuarioModel nuevoUsuario, string Id)
+        {
+            // Acceso y conexion a la BD
+            _dbName = "duEcoSQLite.db3";
+            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
+            _db = new SQLiteConnection(_path);
+
+            try
+            {
+                var datos = new Entidades.tbl_Usuario
+                {
+                    Usu_Id = Id, Usu_Nombre = nuevoUsuario.nombre, Usu_Email = nuevoUsuario.email, Usu_Password = nuevoUsuario.password, Usu_Baja = "N"
+                };
+
+                _db.Insert(datos);
+                return true;
+            }
+            catch (Exception es)
+            {
+                throw es;
+            }
+            
+        }
 
         internal static bool BuscarByLogin(UsuarioModel usuarioLogin)
         {
-            return false;
+            // Acceso y conexion a la BD
+            _dbName = "duEcoSQLite.db3";
+            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
+            _db = new SQLiteConnection(_path);
+
+            var query = _db.Table<tbl_Usuario>()
+                            .Where(t => t.Usu_Email == usuarioLogin.email && t.Usu_Password == usuarioLogin.password)
+                            .Select(t => t)
+                            .FirstOrDefault();
+
+          //IEnumerable<Entidades.tbl_Usuario> resultado = SELECT_WHERE(_db, usuarioLogin);
+            if (query != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+        private static IEnumerable<tbl_Usuario> SELECT_WHERE(SQLiteConnection db, UsuarioModel usuarioLogin)
+        {
+            return db.Query<Entidades.tbl_Usuario>("SELECT * FROM tbl_Usuario WHERE Usu_Email = ? and Usu_Password = ?", usuarioLogin.email, usuarioLogin.password);                
+        }
+
+        #endregion
 
         #region Implements
         public event PropertyChangedEventHandler PropertyChanged;

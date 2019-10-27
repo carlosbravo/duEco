@@ -15,12 +15,12 @@ namespace duEco.Entidades
 
         // Atributos coincidentes con los Modelos de Carpeta -> Model
         [MaxLength(36)]
-        public char TPl_Id { get; set; }
+        public string TPl_Id { get; set; }
 
         [MaxLength(200)]
         public String TPl_Nombre { get; set; }
 
         [MaxLength(36)]
-        public char TPl_Cat_Id { get; set; }        
+        public string TPl_Cat_Id { get; set; }        
     }
 }

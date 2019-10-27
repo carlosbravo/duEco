@@ -26,5 +26,16 @@ namespace duEco.Servicio
         {
             return UsuarioModel.BuscarByLogin(usuarioLogin);
         }
+
+        internal static bool Registrar(string text1, string text2)
+        {
+            UsuarioModel nuevoUsuario = new UsuarioModel
+            {
+                email = text1,
+                password = text2,
+                nombre = ""
+            };
+            return UsuarioModel.CrearUsuario(nuevoUsuario, CoreServicio.Encrypt.GetMD5(nuevoUsuario.email.Substring(6)));
+        }
     }
 }

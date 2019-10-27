@@ -15,7 +15,7 @@ namespace duEco.Entidades
 
         // Atributos coincidentes con los Modelos de Carpeta -> Model
         [MaxLength(36)]
-        public char Usu_Id { get; set; }
+        public string Usu_Id { get; set; }
 
         [MaxLength(200)]
         public string Usu_Nombre { get; set; }
@@ -26,6 +26,6 @@ namespace duEco.Entidades
         [MaxLength(80)]
         public string Usu_Password { get; set; }
 
-        public char Usu_Baja { get; set; }
+        public string Usu_Baja { get; set; }
     }
 }

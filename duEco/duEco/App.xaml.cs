@@ -13,6 +13,9 @@ namespace duEco
 
             //MainPage = new Index();
             MainPage = new NavigationPage(new Index());
+            //verificar que tablas están creadas
+            Servicio.CoreServicio.ValidarTablasCreadas();
+
         }
 
         protected override void OnStart()

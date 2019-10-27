@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using duEco.Model;
@@ -13,7 +14,7 @@ namespace duEco
     public class Index : ContentPage
     {
         private Model.UsuarioModel usuarioLogin;
-
+      
         public Index()
         {
             #region UsuarioDePrueba
@@ -89,19 +90,18 @@ namespace duEco
                 email = email.Text,
                 password = password.Text
              };
-
-            
+                     
 
             var underlineLabel = new Label
             {
-                Text = "El email y/o password es incorrecto",
+                Text = "Si no posee cuenta Registrese",
                 TextDecorations = TextDecorations.Underline,
                 TextColor = Color.DarkRed
             };
             stackLayout.Children.Add(underlineLabel);
 
             Content = stackLayout;
-        }
+        }       
 
         private async void OnButtonClicked(object sender, EventArgs e)
         {
