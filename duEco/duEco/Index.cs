@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using duEco.Model;
 //using RestSharp; --TODO
 using Newtonsoft.Json;
 
@@ -11,19 +12,58 @@ namespace duEco
 {
     public class Index : ContentPage
     {
+        private Model.UsuarioModel usuarioLogin;
+
         public Index()
         {
+            #region UsuarioDePrueba
+            Model.UsuarioModel userTest = new Model.UsuarioModel
+            {
+                nombre = "John Doe",
+                email = "john.d@mail.com",
+                password = "1234"
+            };
+            #endregion
+
+            StackLayout stackLayout = new StackLayout();
+            stackLayout.Padding = 30;
+            stackLayout.Spacing = 10;
+             
             var title = new Label
             {
                 Text = "Bienvenido a duEco",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
             };
+            stackLayout.Children.Add(title);
+
+            var email = new Entry
+            {
+                Text = userTest.email,
+                Placeholder = "E-Mail",
+            };
+            stackLayout.Children.Add(email);
+
+            var password = new Entry
+            {
+                Text = userTest.password,
+                Placeholder = "Contraseña",
+                IsPassword = true
+            };
+            stackLayout.Children.Add(password);
+
+            var login = new Button
+            {
+                Text = "Login"
+            };
+            login.Clicked += OnButtonClicked;
+            stackLayout.Children.Add(login);
 
             var aboutButton = new Button
             {
                 Text = "Sobre nosotros"
             };
+            stackLayout.Children.Add(aboutButton);
 
             var signupButton = new Button
             {
@@ -41,51 +81,43 @@ namespace duEco
             signupButton.Clicked += (object sender, EventArgs e) => {
                 Navigation.PushAsync(new Registro());
             };
+            stackLayout.Children.Add(signupButton);
 
-            Model.UsuarioModel userTest = new Model.UsuarioModel
+                  
+            usuarioLogin = new Model.UsuarioModel
             {
-                nombre = "John Doe", email="john.d@mail.com", password="1234"
-            };
+                email = email.Text,
+                password = password.Text
+             };
 
-            var email = new Entry
+            
+
+            var underlineLabel = new Label
             {
-                Text = userTest.email,
-                Placeholder = "E-Mail",
+                Text = "El email y/o password es incorrecto",
+                TextDecorations = TextDecorations.Underline,
+                TextColor = Color.DarkRed
             };
+            stackLayout.Children.Add(underlineLabel);
 
-            var password = new Entry
-            {
-                Text = userTest.password,
-                Placeholder = "Contraseña",
-                IsPassword = true
-            };
-
-            var login = new Button
-            {
-                Text = "Login"
-            };
-
-            login.Clicked += OnButtonClicked;
-
-            // With the `PushModalAsync` method we navigate the user
-            // the the orders page and do not give them an option to
-            // navigate back to the Homepage by clicking the back button
-
-            //login.Clicked += (sender, e) => {
-            //    Navigation.PushModalAsync(new OrdersPage());
-            //};
-
-            Content = new StackLayout
-            {
-                Padding = 30,
-                Spacing = 10,
-                Children = { title, email, password, login, signupButton, aboutButton }
-            };
+            Content = stackLayout;
         }
 
-        private void OnButtonClicked(object sender, EventArgs e)
+        private async void OnButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new View.Home());
+            if (validarUsuario(usuarioLogin))
+            {
+                await Navigation.PushAsync(new View.Home());
+            }
+            else
+            {
+                await DisplayAlert("Error", "Email y/o password incorrectos", "OK");
+            }
+        }
+
+        private bool validarUsuario(UsuarioModel usuarioLogin)
+        {
+            return Servicio.UsuarioServicio.UsuarioExiste(usuarioLogin);
         }
     }
 }

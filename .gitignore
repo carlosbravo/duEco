@@ -375,3 +375,6 @@ duEco/duEco/obj/Debug/netstandard2.0/duEco.pdb
 duEco/duEco/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
 duEco/duEco/obj/duEco.csproj.nuget.cache
 duEco/duEco/obj/duEco.csproj.nuget.g.props
+duEco/duEco.Android/obj/Debug/81/acw-map.txt
+*.dll
+*.pdb

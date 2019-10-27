@@ -13,10 +13,11 @@
                         <x:String>Female</x:String>
                     </Picker.Items>-->
                 </Picker>
+              
                 <ListView ItemsSource="" BackgroundColor="AliceBlue" x:Name="lstPlantas">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <!--<ImageCell x:Name="icPlanta" Text="{Binding nombre}" Detail="{Binding id}" ImageSource="{Binding imagenPortada}" TextColor="White" DetailColor="WhiteSmoke"></ImageCell>-->
+                           <!-- <ImageCell x:Name="icPlanta" Text="{Binding nombre}" Detail="{Binding id}" ImageSource="{Binding imagenPortada}" TextColor="White" DetailColor="WhiteSmoke"></ImageCell>-->
                             <ViewCell>
                                 <StackLayout BackgroundColor="#EBCC8E"
                         Orientation="Vertical">
@@ -32,7 +33,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
+              
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

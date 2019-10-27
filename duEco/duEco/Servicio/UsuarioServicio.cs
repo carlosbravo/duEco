@@ -21,5 +21,10 @@ namespace duEco.Servicio
         {
 
         }
+
+        internal static bool UsuarioExiste(UsuarioModel usuarioLogin)
+        {
+            return UsuarioModel.BuscarByLogin(usuarioLogin);
+        }
     }
 }

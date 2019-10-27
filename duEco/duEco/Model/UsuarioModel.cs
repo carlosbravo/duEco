@@ -33,6 +33,11 @@ namespace duEco.Model
         }
 
 
+        internal static bool BuscarByLogin(UsuarioModel usuarioLogin)
+        {
+            return false;
+        }
+
         #region Implements
         public event PropertyChangedEventHandler PropertyChanged;
 
