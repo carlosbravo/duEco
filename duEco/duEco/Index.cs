@@ -14,7 +14,34 @@ namespace duEco
     public class Index : ContentPage
     {
         private Model.UsuarioModel usuarioLogin;
-      
+        Label title = new Label
+        {
+            Text = "Bienvenido a duEco",
+            FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+            HorizontalOptions = LayoutOptions.CenterAndExpand,
+        };
+
+        Image icon = new Image
+        {
+            Source = "~/Imagenes/iso-duEco.png",
+            HeightRequest = 140,
+            WidthRequest = 140,
+            BackgroundColor = Color.Transparent
+        };
+
+        Entry email = new Entry
+        {
+            Text = String.Empty,
+            Placeholder = "E-Mail",
+        };
+
+        Entry password = new Entry
+        {
+            Text = String.Empty,
+            Placeholder = "Contraseña",
+            IsPassword = true
+        };
+
         public Index()
         {
             #region UsuarioDePrueba
@@ -29,28 +56,10 @@ namespace duEco
             StackLayout stackLayout = new StackLayout();
             stackLayout.Padding = 30;
             stackLayout.Spacing = 10;
-             
-            var title = new Label
-            {
-                Text = "Bienvenido a duEco",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-            };
-            stackLayout.Children.Add(title);
 
-            var email = new Entry
-            {
-                Text = userTest.email,
-                Placeholder = "E-Mail",
-            };
-            stackLayout.Children.Add(email);
-
-            var password = new Entry
-            {
-                Text = userTest.password,
-                Placeholder = "Contraseña",
-                IsPassword = true
-            };
+            stackLayout.Children.Add(title);            
+            stackLayout.Children.Add(icon);
+            stackLayout.Children.Add(email);            
             stackLayout.Children.Add(password);
 
             var login = new Button
@@ -83,15 +92,7 @@ namespace duEco
                 Navigation.PushAsync(new Registro());
             };
             stackLayout.Children.Add(signupButton);
-
-                  
-            usuarioLogin = new Model.UsuarioModel
-            {
-                email = email.Text,
-                password = password.Text
-             };
-                     
-
+                   
             var underlineLabel = new Label
             {
                 Text = "Si no posee cuenta Registrese",
@@ -105,6 +106,11 @@ namespace duEco
 
         private async void OnButtonClicked(object sender, EventArgs e)
         {
+            usuarioLogin = new Model.UsuarioModel
+            {
+                email = email.Text,
+                password = password.Text
+            };
             if (validarUsuario(usuarioLogin))
             {
                 await Navigation.PushAsync(new View.Home());
