@@ -28,7 +28,7 @@
                                 <StackLayout BackgroundColor="#ECFCF4"
                         Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
-                                        <Image Source="{Binding imagenPortada}" />
+                                        <Image Source="{Binding imagenPortada}" x:Name="imagenPortada" />
                                         <Label Text="{Binding nombre}"/>
                                         <Label Text="{Binding id}" TextColor="#539539" WidthRequest="0" IsVisible="False" />
                                         <!--<Label Text="{Binding id}" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />-->

@@ -51,7 +51,7 @@ namespace duEco.Model
             List<PlantaModel> todasLasPlantas = new List<PlantaModel>();
             if (query.Count > 0)
             {
-                string urlImg = "~/Imagenes/iso_v7.PNG";
+                string urlImg = "iso_v7.PNG";
                 foreach (Entidades.tbl_Planta item in query)
                 {
                     PlantaModel nPlanta = new PlantaModel();

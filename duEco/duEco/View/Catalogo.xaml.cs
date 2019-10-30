@@ -35,7 +35,15 @@ namespace duEco.View
 
         private void cargarCatalogo()
         {
-            lstPlantas.ItemsSource = PlantaServicio.todasLasPlantas();
+            var plantasCatalogo = PlantaServicio.todasLasPlantas();
+            foreach (var item in plantasCatalogo)
+            {
+                item.imagenPortada = Device.RuntimePlatform == Device.Android ?
+                        ImageSource.FromFile("isoduEco.png").ToString()
+                        : ImageSource.FromFile("Imagenes/isoduEco.PNG").ToString();
+            }
+
+            lstPlantas.ItemsSource = plantasCatalogo;
         }
 
         void OnSelection(object sender, SelectedItemChangedEventArgs e)

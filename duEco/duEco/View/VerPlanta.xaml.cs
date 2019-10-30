@@ -19,7 +19,10 @@ namespace duEco.View
 
             var esPlanta = PlantaServicio.buscarPorId(plantaId);
             NombrePlanta.Text = esPlanta.nombre;
-            ImagenPortada.Source = esPlanta.imagenPortada;
+            ImagenPortada.Source = Device.RuntimePlatform == Device.Android ?
+                                    ImageSource.FromFile("iso_v7.png")
+                                    : ImageSource.FromFile("Imagenes/iso_v7.PNG");
+            //esPlanta.imagenPortada;
             Descripcion.Text = esPlanta.id;
 		}
 	}

@@ -20,11 +20,12 @@ namespace duEco
             FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             HorizontalOptions = LayoutOptions.CenterAndExpand,
         };
-
+        
         Image icon = new Image
         {
-            Source = "iso-duEco.PNG",
-            
+            Source = Device.RuntimePlatform == Device.Android ? 
+                        ImageSource.FromFile("isoduEco.png") 
+                        : ImageSource.FromFile("Imagenes/isoduEco.PNG"),
             HeightRequest = 140,
             WidthRequest = 140,
             BackgroundColor = Color.Transparent            

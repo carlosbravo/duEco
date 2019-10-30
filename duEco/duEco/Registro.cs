@@ -57,17 +57,23 @@ namespace duEco
 
         private async void registrarNuevoUsuario(string text1, string text2)
         {
-            if (Servicio.UsuarioServicio.Registrar(text1, text2))
+            if (!String.IsNullOrEmpty(text1) && !String.IsNullOrEmpty(text2))
             {
-                await DisplayAlert("Registro correcto", "Los datos se han completado correctamente", "Ok");
-                await Navigation.PushAsync(new Index());
+                if (Servicio.UsuarioServicio.Registrar(text1, text2))
+                {
+                    await DisplayAlert("Registro correcto", "Los datos se han completado correctamente", "Ok");
+                    await Navigation.PushAsync(new Index());
 
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No se pudieron registrar los datos", "OK");
+                }
             }
             else
             {
-                await DisplayAlert("Error", "No se pudieron registrar los datos", "OK");
+                await DisplayAlert("Error", "Complete ambos campos correctamente", "OK");
             }
-            
         }
     }
 }
