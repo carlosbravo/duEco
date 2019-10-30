@@ -38,7 +38,10 @@ namespace duEco
 
             var signupButton = new Button
             {
-                Text = "Registrarse"
+                Text = "Registrarse",
+                BackgroundColor = Color.MediumSeaGreen,
+                TextColor = Color.White,
+                BorderWidth = 20
             };
            
             signupButton.Clicked += (object sender, EventArgs e) => {
@@ -47,6 +50,7 @@ namespace duEco
                 
             };
             stackLayout.Children.Add(signupButton);
+            stackLayout.BackgroundColor = Color.Transparent;
 
             Content = stackLayout;
         }

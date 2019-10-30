@@ -65,6 +65,54 @@ namespace duEco.Model
 
             return todasLasPlantas;
         }
+
+        internal static PlantaModel buscarPorId(string v)
+        {
+            // Acceso y conexion a la BD
+            _dbName = "duEcoSQLite.db3";
+            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
+            _db = new SQLiteConnection(_path);
+
+            var query = _db.Table<Entidades.tbl_Planta>()
+                            .Where(t => t.Pla_Id == v)
+                            .FirstOrDefault();
+
+            //IEnumerable<Entidades.tbl_Usuario> resultado = SELECT_WHERE(_db, usuarioLogin);
+            if (query != null)
+            {
+                return new PlantaModel { id = query.Pla_Id, nombre = query.Pla_Nombre, imagenPortada = "" };
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        internal static List<CategoriaModel> todasLasCategorias()
+        {
+            // Acceso y conexion a la BD
+            _dbName = "duEcoSQLite.db3";
+            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
+            _db = new SQLiteConnection(_path);
+
+            var query = _db.Table<Entidades.tbl_Categoria>()
+                            .ToList();
+
+            List<CategoriaModel> todasLasCategorias = new List<CategoriaModel>();
+            if (query.Count > 0)
+            {
+                foreach (Entidades.tbl_Categoria item in query)
+                {
+                    CategoriaModel nCategoria = new CategoriaModel();
+                    nCategoria.id = item.Cat_Id;
+                    nCategoria.nombre = item.Cat_Nombre;
+
+                    todasLasCategorias.Add(nCategoria);
+                }
+            }
+
+            return todasLasCategorias;
+        }
         #endregion
     }
 }

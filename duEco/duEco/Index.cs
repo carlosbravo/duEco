@@ -23,16 +23,17 @@ namespace duEco
 
         Image icon = new Image
         {
-            Source = "~/Imagenes/iso-duEco.png",
+            Source = "iso-duEco.PNG",
+            
             HeightRequest = 140,
             WidthRequest = 140,
-            BackgroundColor = Color.Transparent
+            BackgroundColor = Color.Transparent            
         };
 
         Entry email = new Entry
         {
             Text = String.Empty,
-            Placeholder = "E-Mail",
+            Placeholder = "E-Mail"
         };
 
         Entry password = new Entry
@@ -64,7 +65,10 @@ namespace duEco
 
             var login = new Button
             {
-                Text = "Login"
+                Text = "Login",
+                BackgroundColor = Color.MediumSeaGreen,
+                TextColor = Color.White,
+                BorderWidth = 20
             };
             login.Clicked += OnButtonClicked;
             stackLayout.Children.Add(login);
@@ -100,6 +104,7 @@ namespace duEco
                 TextColor = Color.DarkRed
             };
             stackLayout.Children.Add(underlineLabel);
+            stackLayout.BackgroundColor = Color.Transparent;
 
             Content = stackLayout;
         }       
@@ -113,6 +118,8 @@ namespace duEco
             };
             if (validarUsuario(usuarioLogin))
             {
+                App.Current.Properties["user"] = usuarioLogin.email;
+                App.Current.Properties["IsLoggedIn"] = true;
                 await Navigation.PushAsync(new View.Home());
             }
             else

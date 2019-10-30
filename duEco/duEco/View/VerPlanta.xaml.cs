@@ -13,11 +13,11 @@ namespace duEco.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class VerPlanta : ContentPage
 	{
-		public VerPlanta ()
+		public VerPlanta (string plantaId)
 		{
 			InitializeComponent ();
 
-            var esPlanta = PlantaServicio.buscarPorId("dfe1f51fe651fef1");
+            var esPlanta = PlantaServicio.buscarPorId(plantaId);
             NombrePlanta.Text = esPlanta.nombre;
             ImagenPortada.Source = esPlanta.imagenPortada;
             Descripcion.Text = esPlanta.id;

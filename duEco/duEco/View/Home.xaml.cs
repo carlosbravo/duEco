@@ -15,12 +15,31 @@ namespace duEco.View
 		public Home ()
 		{
 			InitializeComponent();
-            btnCatalogo.Clicked += btnCatalogo_Clicked;
+            
+            var isLoggedIn = App.Current.Properties.ContainsKey("IsLoggedIn") ? (bool)App.Current.Properties["IsLoggedIn"] : false;
+            if (isLoggedIn)
+            {
+                usLog.Text = App.Current.Properties["user"].ToString();
+                btnCatalogo.Clicked += btnCatalogo_Clicked;
+                btnSalir.Clicked += btnSalir_Clicked;
+            }
+            else
+            {
+                DisplayAlert("Mensaje", "No tiene iniciada la sesion", "Ok");
+                Navigation.PushAsync(new Index());
+            }
 		}
+
+        private void btnSalir_Clicked(object sender, EventArgs e)
+        {
+            App.Current.Properties["IsLoggedIn"] = false;
+            Navigation.PushAsync(new Index());
+        }
 
         private void btnCatalogo_Clicked(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new View.Catalogo());
+
         }
     }
 }

@@ -6,9 +6,9 @@ namespace duEco.Model
 {
     public class CategoriaModel
     {
-        private int Id;
+        private string Id;
 
-        public int id
+        public string id
         {
             get { return Id; }
             set { Id = value; }

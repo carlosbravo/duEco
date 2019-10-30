@@ -33,14 +33,14 @@ namespace duEco.Servicio
             return PlantaModel.obtenerTodas();
         }
 
+        internal static List<CategoriaModel> obtenerCategorias()
+        {
+            return PlantaModel.todasLasCategorias();
+        }
+
         internal static PlantaModel buscarPorId(string v)
         {
-            return new PlantaModel
-            {
-                id = v,
-                nombre="Menta",
-                imagenPortada=""
-            };
+           return PlantaModel.buscarPorId(v);
         }
     }
 }

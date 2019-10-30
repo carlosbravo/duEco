@@ -15,7 +15,7 @@ namespace duEco.Entidades
 
         // Atributos coincidentes con los Modelos de Carpeta -> Model
         [MaxLength(36)]
-        public char Cat_Id { get; set; }
+        public string Cat_Id { get; set; }
 
         public string Cat_Nombre { get; set; }
     }
