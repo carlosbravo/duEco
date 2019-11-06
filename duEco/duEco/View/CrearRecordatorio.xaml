@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="duEco.View.CrearRecordatorio">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblFecha"
+                Text=""
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <TimePicker x:Name="tmpHora"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"/>
+            <Entry x:Name="txtDescripcion" 
+                    Placeholder="Descripción" 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="btnCrearRecordatorio" 
+                    Text="Confirmar" 
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
+                    Clicked="BtnCrearRecordatorio_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

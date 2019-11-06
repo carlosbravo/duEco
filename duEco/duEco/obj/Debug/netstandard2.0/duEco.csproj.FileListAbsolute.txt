@@ -26,4 +26,6 @@ D:\ProyectosGit\duEco2\duEco\duEco\obj\Debug\netstandard2.0\duEco.dll
 D:\ProyectosGit\duEco2\duEco\duEco\obj\Debug\netstandard2.0\duEco.pdb
 D:\ProyectosGit\duEco2\duEco\duEco\obj\Debug\netstandard2.0\duEco.csprojAssemblyReference.cache
 D:\ProyectosGit\duEco2\duEco\duEco\obj\Debug\netstandard2.0\Notificacion.xaml.g.cs
+D:\ProyectosGit\duEco2\duEco\duEco\obj\Debug\netstandard2.0\Calendario.xaml.g.cs
 D:\ProyectosGit\duEco2\duEco\duEco\obj\Debug\netstandard2.0\XamlC.stamp
+D:\ProyectosGit\duEco2\duEco\duEco\obj\Debug\netstandard2.0\View\CrearRecordatorio.xaml.g.cs

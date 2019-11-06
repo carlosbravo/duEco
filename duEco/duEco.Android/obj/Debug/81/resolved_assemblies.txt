@@ -41,6 +41,8 @@ D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\Xamarin.F
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.dll
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.dll
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.dll
+D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\XamForms.Controls.Calendar.dll
+D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\XamForms.Controls.Calendar.Droid.dll
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\netstandard.dll
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\System.Data.dll
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\System.Numerics.dll
@@ -64,3 +66,5 @@ D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\System.Th
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\System.Reflection.Extensions.dll
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\System.Globalization.dll
 D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\Mono.Security.dll
+D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\System.Resources.ResourceManager.dll
+D:\ProyectosGit\duEco2\duEco\duEco.Android\obj\Debug\81\android\assets\System.ObjectModel.dll

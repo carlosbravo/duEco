@@ -193,12 +193,27 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "XamForms.Controls.Calendar/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.231"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll": {},
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll": {},
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll": {}
+        }
+      },
       "duEco/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.2",
           "Xam.Plugins.Notifier": "3.0.1",
+          "XamForms.Controls.Calendar": "1.1.1",
           "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
@@ -402,12 +417,27 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "XamForms.Controls.Calendar/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.231"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll": {},
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll": {},
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll": {}
+        }
+      },
       "duEco/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.2",
           "Xam.Plugins.Notifier": "3.0.1",
+          "XamForms.Controls.Calendar": "1.1.1",
           "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
@@ -611,12 +641,27 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "XamForms.Controls.Calendar/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.231"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll": {},
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll": {},
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll": {}
+        }
+      },
       "duEco/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.2",
           "Xam.Plugins.Notifier": "3.0.1",
+          "XamForms.Controls.Calendar": "1.1.1",
           "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
@@ -820,12 +865,27 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "XamForms.Controls.Calendar/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.231"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll": {},
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll": {},
+          "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll": {}
+        }
+      },
       "duEco/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.2",
           "Xam.Plugins.Notifier": "3.0.1",
+          "XamForms.Controls.Calendar": "1.1.1",
           "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
@@ -1168,6 +1228,30 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
         "xamarin.forms.3.6.0.220655.nupkg.sha512",
         "xamarin.forms.nuspec"
+      ]
+    },
+    "XamForms.Controls.Calendar/1.1.1": {
+      "sha512": "GCydwm9HO+8V4iGVsGJZtnHJaqIpjas40BSRU+T7lIM7E4nZ7pOn2Ifzu0Y6MLrZJuqCHFeroOWjJSfOjZIyyw==",
+      "type": "package",
+      "path": "xamforms.controls.calendar/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/XamForms.Controls.Calendar.Droid.dll",
+        "lib/MonoAndroid10/XamForms.Controls.Calendar.dll",
+        "lib/MonoTouch10/XamForms.Controls.Calendar.dll",
+        "lib/MonoTouch10/XamForms.Controls.Calendar.iOS.dll",
+        "lib/UAP10/XamForms.Controls.Calendar.UWP.dll",
+        "lib/UAP10/XamForms.Controls.Calendar.dll",
+        "lib/Xamarin.iOS10/XamForms.Controls.Calendar.dll",
+        "lib/Xamarin.iOS10/XamForms.Controls.Calendar.iOS.dll",
+        "lib/portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/XamForms.Controls.Calendar.dll",
+        "lib/win81/XamForms.Controls.Calendar.Windows.dll",
+        "lib/win81/XamForms.Controls.Calendar.dll",
+        "lib/wpa81/XamForms.Controls.Calendar.WinPhone.dll",
+        "lib/wpa81/XamForms.Controls.Calendar.dll",
+        "xamforms.controls.calendar.1.1.1.nupkg.sha512",
+        "xamforms.controls.calendar.nuspec"
       ]
     },
     "duEco/1.0.0": {
