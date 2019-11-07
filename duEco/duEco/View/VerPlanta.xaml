@@ -18,21 +18,34 @@
             
             <StackLayout BackgroundColor="AliceBlue">
                     
-                    <Image x:Name="ImagenPortada" />
-                    <Label x:Name="NombrePlanta" TextColor="#539539" />
-                    <Label x:Name="Descripcion" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
+                <Image x:Name="ImagenPortada" />
+                <Label x:Name="NombrePlanta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Label Text="Descripcion" TextColor="Black" FontSize="Small" />
+                <Label x:Name="Descripcion" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
 
-                    <TableView Intent="Settings">
+                <Label Text="Dificultad" TextColor="Black" FontSize="Small" />
+                <Label x:Name="lblDificultad" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
+
+                <Label Text="Tipo de Siembra" TextColor="Black" FontSize="Small" />
+                <Label x:Name="lblTipoSiembra" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
+
+                <Label Text="Epoca de Siembra" TextColor="Black" FontSize="Small" />
+                <Label x:Name="lblEpoca" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
+
+                <Label Text="Distancia entre Plantas" TextColor="Black" FontSize="Small" />
+                <Label x:Name="lblDistancia" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
+
+                <Label Text="Valor Nutricional" TextColor="Black" FontSize="Small" />
+                <Label x:Name="lblValor" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
+                
+                <TableView Intent="Settings">
                         <TableRoot>
                             <TableSection Title="Mas Info">
                                 <ViewCell>
                                     <StackLayout Orientation="Horizontal">
                                         <Image Source="" />
-                                        <Label Text="lorem ipsum..."
-                                     TextColor="#032C5B" />
-                                        <Label Text="right"
-                                     HorizontalOptions="EndAndExpand"
-                                     TextColor="#75D0E3" />
+                                        <Label Text="" TextColor="#032C5B" />
+                                        <Label Text="right" HorizontalOptions="EndAndExpand" TextColor="#75D0E3" />
                                     </StackLayout>
                                 </ViewCell>
                             </TableSection>

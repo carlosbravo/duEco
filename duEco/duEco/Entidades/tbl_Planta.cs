@@ -21,6 +21,26 @@ namespace duEco.Entidades
         public String Pla_Nombre { get; set; }
 
         [MaxLength(36)]
-        public string Pla_TPl_Id { get; set; }        
+        public string Pla_TPl_Id { get; set; }
+
+        public byte[] Pla_Imagen { get; set; }
+
+        [MaxLength(300)]
+        public string Pla_Descripcion { get; set; }
+
+        [MaxLength(36)]
+        public string Pla_EpocaSiembra { get; set; }
+
+        [MaxLength(150)]
+        public string Pla_TipoSiembra { get; set; }
+
+        [MaxLength(25)]
+        public string Pla_DistanciaEntrePlantas { get; set; }
+
+        [MaxLength(25)]
+        public string Pla_Dificultad { get; set; }
+
+        [MaxLength(300)]
+        public string Pla_ValorNutricional { get; set; }
     }
 }
