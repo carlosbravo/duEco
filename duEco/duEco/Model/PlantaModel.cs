@@ -8,6 +8,7 @@ namespace duEco.Model
 {
     public class PlantaModel
     {
+        #region Propiedades
         private string Id;
 
         public string id
@@ -32,19 +33,72 @@ namespace duEco.Model
             set { ImagenPortada = value; }
         }
 
+        private string Descripcion;
+
+        public string  descripcion
+        {
+            get { return Descripcion; }
+            set { Descripcion = value; }
+        }
+
+        private string EpocaSiembra;
+
+        public string epocaSiembra
+        {
+            get { return EpocaSiembra; }
+            set { EpocaSiembra = value; }
+        }
+
+        private string TipoSiembra;
+
+        public string tipoSiembra
+        {
+            get { return TipoSiembra; }
+            set { TipoSiembra = value; }
+        }
+
+        private string Distancia;
+
+        public string distancia
+        {
+            get { return Distancia; }
+            set { Distancia = value; }
+        }
+
+        private string Dificultad;
+
+        public string dificultad
+        {
+            get { return Dificultad; }
+            set { Dificultad = value; }
+        }
+
+        private string ValorNutricional;
+
+        public string valorNutricional
+        {
+            get { return ValorNutricional; }
+            set { ValorNutricional = value; }
+        }
+
+        #endregion
+
+        
         #region SQLite
         private static string _dbName;
         private static string _path;
         private static SQLiteConnection _db;
 
-
-        internal static List<PlantaModel> obtenerTodas()
+        public PlantaModel()
         {
             // Acceso y conexion a la BD
             _dbName = "duEcoSQLite.db3";
             _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
             _db = new SQLiteConnection(_path);
+        }
 
+        public List<PlantaModel> obtenerTodas()
+        {
             var query = _db.Table<Entidades.tbl_Planta>()
                             .ToList();
 
@@ -58,7 +112,7 @@ namespace duEco.Model
                     nPlanta.id = item.Pla_Id;
                     nPlanta.nombre = item.Pla_Nombre;
                     nPlanta.imagenPortada = urlImg;
-
+                    nPlanta.dificultad = item.Pla_Dificultad;
                     todasLasPlantas.Add(nPlanta);
                 }
             }
@@ -66,13 +120,8 @@ namespace duEco.Model
             return todasLasPlantas;
         }
 
-        internal static PlantaModel buscarPorId(string v)
+        public PlantaModel buscarPorId(string v)
         {
-            // Acceso y conexion a la BD
-            _dbName = "duEcoSQLite.db3";
-            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
-            _db = new SQLiteConnection(_path);
-
             var query = _db.Table<Entidades.tbl_Planta>()
                             .Where(t => t.Pla_Id == v)
                             .FirstOrDefault();
@@ -80,7 +129,17 @@ namespace duEco.Model
             //IEnumerable<Entidades.tbl_Usuario> resultado = SELECT_WHERE(_db, usuarioLogin);
             if (query != null)
             {
-                return new PlantaModel { id = query.Pla_Id, nombre = query.Pla_Nombre, imagenPortada = "" };
+                return new PlantaModel {
+                                            id = query.Pla_Id,
+                                            nombre = query.Pla_Nombre,
+                                            imagenPortada = "",
+                                            descripcion = query.Pla_Descripcion,
+                                            dificultad = query.Pla_Dificultad,
+                                            distancia = query.Pla_DistanciaEntrePlantas,
+                                            epocaSiembra = query.Pla_EpocaSiembra,
+                                            tipoSiembra = query.Pla_TipoSiembra,
+                                            valorNutricional = query.Pla_ValorNutricional
+                };
             }
             else
             {
@@ -88,13 +147,12 @@ namespace duEco.Model
             }
         }
 
-        internal static List<CategoriaModel> todasLasCategorias()
+        /// <summary>
+        /// Las categorias corresponden a las Plantas
+        /// </summary>
+        /// <returns></returns>
+        public List<CategoriaModel> todasLasCategorias()
         {
-            // Acceso y conexion a la BD
-            _dbName = "duEcoSQLite.db3";
-            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
-            _db = new SQLiteConnection(_path);
-
             var query = _db.Table<Entidades.tbl_Categoria>()
                             .ToList();
 

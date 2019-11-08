@@ -12,7 +12,7 @@ namespace duEco.Entidades
 
         // Atributos coincidentes con los Modelos de Carpeta -> Model
         [MaxLength(36)]
-        public char Hue_Id { get; set; }
+        public String Hue_Id { get; set; }
 
         [MaxLength(200)]
         public String Hue_Nombre { get; set; }
@@ -21,8 +21,10 @@ namespace duEco.Entidades
         public String Hue_Descripcion { get; set; }
 
         [MaxLength(36)]
-        public char Hue_Usu_Id { get; set; }
-        public char Hue_Baja { get; set; }
+        public String Hue_Usu_Id { get; set; }
+
+        [MaxLength(1)]
+        public String Hue_Baja { get; set; }
          
     }
 }

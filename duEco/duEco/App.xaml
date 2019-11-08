@@ -4,5 +4,10 @@
              x:Class="duEco.App">
     <Application.Resources>
         <StyleSheet Source="Style/styles.css" />
+        <Style TargetType="NavigationPage">
+            <!--<Setter Property="BarBackgroundColor" Value="{DynamicResource Primary}" />-->
+            <Setter Property="BarTextColor" Value="White" />
+            <Setter Property="BarBackgroundColor" Value="#82BC75"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

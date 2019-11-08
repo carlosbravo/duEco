@@ -15,13 +15,19 @@ namespace duEco.Entidades
 
         // Atributos coincidentes con los Modelos de Carpeta -> Model
         [MaxLength(36)]
-        public char Tar_Id { get; set; }
+        public String Eta_Id { get; set; }
 
-        public int Tar_Eta_Id { get; set; }
+        [MaxLength(36)]
+        public String Eta_Tar_Id { get; set; }
+
+        [MaxLength(36)]
+        public String Eta_Pla_Id { get; set; }
+
+        public int Eta_DiasDuracion { get; set; }
 
         [MaxLength(300)]
-        public String Tar_Descripcion { get; set; }
+        public String Eta_Descripcion { get; set; }
 
-        public char Tar_Baja { get; set; }
+        public String Eta_Baja { get; set; }
     }
 }

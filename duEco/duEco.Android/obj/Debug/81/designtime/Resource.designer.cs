@@ -26,7 +26,6 @@ namespace duEco.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::duEco.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::duEco.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::duEco.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::duEco.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -4318,6 +4317,9 @@ namespace duEco.Droid
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
+			// aapt resource value: 0x7F010002
+			public const int ej15 = 2130771970;
+			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
 			
@@ -4849,8 +4851,14 @@ namespace duEco.Droid
 			// aapt resource value: 0x7F090104
 			public const int ic_vol_type_tv_light = 2131296516;
 			
-			// aapt resource value: 0x7F010002
-			public const int isoduEco = 2130771970;
+			// aapt resource value: 0x7F010003
+			public const int isoduEco = 2130771971;
+			
+			// aapt resource value: 0x7F010004
+			public const int iso_v7 = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int iso_v8 = 2130771973;
 			
 			// aapt resource value: 0x7F090105
 			public const int mr_button_connected_dark = 2131296517;
@@ -4950,9 +4958,6 @@ namespace duEco.Droid
 			
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
-			
-			// aapt resource value: 0x7F010003
-			public const int plugin_lc_smallicon = 2130771971;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;

@@ -41,7 +41,7 @@ namespace duEco.Model
         private static string _dbName;
         private static string _path;
         private static SQLiteConnection _db;
-        
+
         internal static bool CrearUsuario(UsuarioModel nuevoUsuario, string Id)
         {
             // Acceso y conexion a la BD
@@ -64,6 +64,20 @@ namespace duEco.Model
                 throw es;
             }
             
+        }
+        
+        internal string ConsultarPorLog(string userId)
+        {
+            // Acceso y conexion a la BD
+            _dbName = "duEcoSQLite.db3";
+            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
+            _db = new SQLiteConnection(_path);
+
+            var qId = from u in _db.Table<Entidades.tbl_Usuario>()
+                      where u.Usu_Email == userId && u.Usu_Baja == "N"
+                      select u.Usu_Id;
+
+            return qId.FirstOrDefault();
         }
 
         internal static bool BuscarByLogin(UsuarioModel usuarioLogin)

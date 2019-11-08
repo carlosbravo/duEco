@@ -7,9 +7,9 @@
         <ResourceDictionary>
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#539539"/>
-                <Setter Property="WidthRequest" Value="220"/>
+                <Setter Property="WidthRequest" Value="200"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontSize" Value="Large"/>
             </Style>
         </ResourceDictionary>
     </Page.Resources>
@@ -28,9 +28,10 @@
                                 <StackLayout BackgroundColor="#ECFCF4"
                         Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
-                                        <Image Source="{Binding imagenPortada}" x:Name="imagenPortada" />
+                                        <Image Source="{Binding imagenPortada}" x:Name="imagenPortada" MinimumWidthRequest="5" />
                                         <Label Text="{Binding nombre}"/>
-                                        <Label Text="{Binding id}" TextColor="#539539" WidthRequest="0" IsVisible="False" />
+                                        <Label Text="Dificultad" TextColor="Black" FontSize="Small" />
+                                        <Label Text="{Binding dificultad}" TextColor="#539539" FontSize="Micro" />
                                         <!--<Label Text="{Binding id}" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />-->
                                         <Label x:Name="btnInfoPlanta" Text=">" WidthRequest="45" HeightRequest="45"
                                              Font="Bold,15" Margin="0,0,0,5" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"/>

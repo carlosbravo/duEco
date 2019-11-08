@@ -21,6 +21,7 @@ namespace duEco.View
             {
                 usLog.Text = App.Current.Properties["user"].ToString();
                 btnCatalogo.Clicked += btnCatalogo_Clicked;
+                btnHuertas.Clicked += btnHuertas_Clicked;
                 btnSalir.Clicked += btnSalir_Clicked;
             }
             else
@@ -29,6 +30,11 @@ namespace duEco.View
                 Navigation.PushAsync(new Index());
             }
 		}
+
+        private void btnHuertas_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new View.MisHuertas());
+        }
 
         private void btnSalir_Clicked(object sender, EventArgs e)
         {

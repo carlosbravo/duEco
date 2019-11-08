@@ -32,6 +32,7 @@
                 <Frame BackgroundColor="DarkGreen">
                     <Button Text="CALENDARIO" x:Name="btnCalendario" />
                 </Frame>
+                <Label Text="Fuente: https://inta.gob.ar/sites/default/files/script-tmp-manual_cultivos_pro_huerta_-_cerbas.pdf"></Label>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
