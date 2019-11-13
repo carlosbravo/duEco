@@ -23,6 +23,16 @@ namespace duEco.Servicio
                 //db.DropTable<Entidades.tbl_Etapa>();
                 //
 
+
+                //SE CREA LA TABLA DE ALERTA
+                var existTableAlerta = db.GetTableInfo("tbl_Alerta");
+
+                if (existTableAlerta.Count == 0)
+                {
+                    db.CreateTable<Entidades.tbl_Alerta>();
+                }
+
+                //SE CREA LA TABLA DE USUARIO
                 var existTable = db.GetTableInfo("tbl_Usuario"); //db.Query<Entidades.tbl_Usuario>("SELECT count(*) FROM sqlite_master WHERE type = 'Table' AND name = 'tbl_Usuario' ");
 
                 if (existTable.Count == 0)
@@ -30,6 +40,7 @@ namespace duEco.Servicio
                     db.CreateTable<Entidades.tbl_Usuario>();
                 }
 
+                //TABLA PLANTA: CREACIÓN Y CARGA INICIAL
                 var existPlanta = db.GetTableInfo("tbl_Planta"); //db.Query<Entidades.tbl_Usuario>("SELECT count(*) FROM sqlite_master WHERE type = 'Table' AND name = 'tbl_Planta' ");
                 if (existPlanta.Count == 0)
                 {                    
@@ -120,6 +131,7 @@ namespace duEco.Servicio
                     }
                 }
 
+                //TABLA TIPO PLANTA: CREACIÓN Y CARGA INICIAL
                 var existTipoPlanta = db.GetTableInfo("tbl_TipoPlanta"); //db.Query<Entidades.tbl_Usuario>("SELECT count(*) FROM sqlite_master WHERE type = 'Table' AND name = 'tbl_Planta' ");
                 if (existTipoPlanta.Count == 0)
                 {
@@ -149,6 +161,8 @@ namespace duEco.Servicio
                 }
                 var tableTP = db.Table<Entidades.tbl_TipoPlanta>().ToList();
 
+
+                //TABLA PLANTA: CREACIÓN Y CARGA INICIAL
                 var existCategoria = db.GetTableInfo("tbl_Categoria"); //db.Query<Entidades.tbl_Usuario>("SELECT count(*) FROM sqlite_master WHERE type = 'Table' AND name = 'tbl_Planta' ");
                 if (existCategoria.Count == 0)
                 {
@@ -183,6 +197,7 @@ namespace duEco.Servicio
                     db.CreateTable<Entidades.tbl_Cultivo>();
                 }
 
+                //TABLA TAREA: CREACIÓN Y CARGA INICIAL
                 var existTarea = db.GetTableInfo("tbl_Tarea");
                 if (existTarea.Count == 0)
                 {
@@ -204,6 +219,7 @@ namespace duEco.Servicio
                     db.Insert(newTarea);
                 }
 
+                //TABLA ETAPA: CREACIÓN Y CARGA INICIAL
                 var existEtapa = db.GetTableInfo("tbl_Etapa");
                 if (existEtapa.Count == 0)
                 {
@@ -371,6 +387,31 @@ namespace duEco.Servicio
                 //    var allEtapas = db.Query<Entidades.tbl_Etapa>("SELECT * FROM tbl_Etapa");
                 //    var allTareas = db.Query<Entidades.tbl_Tarea>("SELECT * FROM tbl_Tarea");
                 var allTareas = db.Query<Entidades.tbl_Planta>("SELECT * FROM tbl_Planta");
+
+
+                //TABLA TIPO ALERTA: CREACIÓN Y CARGA INICIAL
+                var existTipoAlerta = db.GetTableInfo("tbl_TipoAlerta");
+                if (existTipoAlerta.Count == 0)
+                {
+                    db.CreateTable<Entidades.tbl_TipoAlerta>();
+                    var newTipoAlerta = new Entidades.tbl_TipoAlerta();
+
+                    newTipoAlerta.TAl_Id = "4cc709c1c7307d4brrra6b79dd4ddc3f";
+                    newTipoAlerta.TAl_Descripcion = "Considerable";
+                    newTipoAlerta.TAl_Baja = "N";
+                    db.Insert(newTipoAlerta);
+
+                    newTipoAlerta.TAl_Id = "4cc709c1c7307d4b325a6b79dd4sss3f";
+                    newTipoAlerta.TAl_Descripcion = "Necesario";
+                    newTipoAlerta.TAl_Baja = "N";
+                    db.Insert(newTipoAlerta);
+
+                    newTipoAlerta.TAl_Id = "4cc709c1c7307d4b325a6b79dd4ddm5i";
+                    newTipoAlerta.TAl_Descripcion = "Fundamental";
+                    newTipoAlerta.TAl_Baja = "N";
+                    db.Insert(newTipoAlerta);
+                }
+                var compruebaAltaTabla = db.Table<Entidades.tbl_TipoAlerta>().ToList();
             }
             catch (Exception c)
             {

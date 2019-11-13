@@ -12,7 +12,7 @@ namespace duEco
             InitializeComponent();
 
             //MainPage = new Index();
-            MainPage = new NavigationPage(new Calendario());
+            MainPage = new NavigationPage(new Index());
             //verificar que tablas están creadas
             Servicio.CoreServicio.ValidarTablasCreadas();
 

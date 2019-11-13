@@ -30,7 +30,7 @@ namespace duEco.Servicio
 
         internal static bool Registrar(string text1, string text2)
         {
-            if (email_bien_escrito(text2))
+            if (email_bien_escrito(text1))
             {
                 UsuarioModel nuevoUsuario = new UsuarioModel
                 {

@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Plugin.LocalNotifications;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,54 +9,58 @@ namespace duEco.Model
 {
     public class AlertaModel
     {
-        private int Id;
-        public int id
+        private int id;        
+        public int Id
         {
-            get { return Id; }
-            set { Id = value; }
+            get { return id; }
+            set { id = value; }
         }
         
-        private char HuertaID;
+        private String huertaId;
         [MaxLength(36)]
-        public char huertaID
+        public String HuertaID
         {
-            get { return HuertaID; }
-            set { HuertaID = value; }
+            get { return huertaId; }
+            set { huertaId = value; }
         }
 
-        private string Descripcion;
-        public string descripcion
+        private string descripcion;
+        [MaxLength(300)]
+        public string Descripcion
         {
-            get { return Descripcion; }
-            set { Descripcion = value; }
+            get { return descripcion; }
+            set { descripcion = value; }
         }
 
-        private DateTime FechaHora;
-        public DateTime fechaHora
+        private DateTime fechaHora;
+        public DateTime FechaHora
         {
-            get { return FechaHora; }
-            set { FechaHora = value; }
+            get { return fechaHora; }
+            set { fechaHora = value; }
         }
 
-        public char Avisa;
-        public char avisa
+        public String avisa;
+        [MaxLength(1)]
+        public String Avisa
         {
-            get { return Avisa; }
-            set { Avisa = value; }
+            get { return avisa; }
+            set { avisa = value; }
         }
 
-        public int TipoAlertaID;
-        public int tipoalertaID
+        public String tipoAlertaId;
+        [MaxLength(36)]
+        public String TipoAlertaID
         {
-            get { return TipoAlertaID; }
-            set { TipoAlertaID = value; }
+            get { return tipoAlertaId; }
+            set { tipoAlertaId = value; }
         }
 
-        public char Baja;
-        public char baja
+        public String baja;
+        [MaxLength(1)]
+        public String Baja
         {
-            get { return Baja; }
-            set { Baja = value; }
+            get { return baja; }
+            set { baja = value; }
         }
 
         //-------------------------------------------------------------        
@@ -65,82 +70,65 @@ namespace duEco.Model
         private static string _path;
         private static SQLiteConnection _db;
 
-
-        internal static List<PlantaModel> obtenerTodas()
+        public AlertaModel()
         {
-            // Acceso y conexion a la BD
             _dbName = "duEcoSQLite.db3";
             _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
             _db = new SQLiteConnection(_path);
+        }
 
-            var query = _db.Table<Entidades.tbl_Planta>()
-                            .ToList();
+        public void Dispose()
+        {
+            _db.Dispose();
+        }
 
-            List<PlantaModel> todasLasPlantas = new List<PlantaModel>();
-            if (query.Count > 0)
+        public bool CrearAlerta(int idIncremental, String idHuerta, String descripcion, DateTime fechaHora, String avisa, String idTipoAlerta)
+        {
+            try
             {
-                string urlImg = "iso_v7.PNG";
-                foreach (Entidades.tbl_Planta item in query)
+                var nuevaAlerta = new Entidades.tbl_Alerta
                 {
-                    PlantaModel nPlanta = new PlantaModel();
-                    nPlanta.id = item.Pla_Id;
-                    nPlanta.nombre = item.Pla_Nombre;
-                    nPlanta.imagenPortada = urlImg;
+                    Ale_Id = idIncremental,
+                    Ale_Hue_Id = idHuerta,
+                    Ale_Descripcion = descripcion,
+                    Ale_Fecha_Hora = fechaHora,
+                    Ale_Avisa = avisa,
+                    Ale_TAl_Id = idTipoAlerta,
+                    Ale_Baja = "N"                    
+                };
+                _db.Insert(nuevaAlerta);
 
-                    todasLasPlantas.Add(nPlanta);
-                }
+                if(avisa == "S")
+                    CrossLocalNotifications.Current.Show("duEco", descripcion, idIncremental, fechaHora);
+
+                return true;
             }
-
-            return todasLasPlantas;
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
         }
 
-        internal static PlantaModel buscarPorId(string v)
+        public int getUltimoIdAlerta()
         {
-            // Acceso y conexion a la BD
-            _dbName = "duEcoSQLite.db3";
-            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
-            _db = new SQLiteConnection(_path);
-
-            var query = _db.Table<Entidades.tbl_Planta>()
-                            .Where(t => t.Pla_Id == v)
-                            .FirstOrDefault();
-
-            //IEnumerable<Entidades.tbl_Usuario> resultado = SELECT_WHERE(_db, usuarioLogin);
-            if (query != null)
+            try
             {
-                return new PlantaModel { id = query.Pla_Id, nombre = query.Pla_Nombre, imagenPortada = "" };
+                var ultimaAlerta = _db.Table<Entidades.tbl_Alerta>().OrderByDescending(item => item.Ale_Id).FirstOrDefault();                
+                int ultID;
+
+                if (ultimaAlerta != null)
+                    ultID = ultimaAlerta.Ale_Id++;
+                else
+                    ultID = 0;
+
+                return ultID;
             }
-            else
+            catch (Exception e)
             {
-                return null;
-            }
-        }
-
-        internal static List<CategoriaModel> todasLasCategorias()
-        {
-            // Acceso y conexion a la BD
-            _dbName = "duEcoSQLite.db3";
-            _path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.Personal), _dbName);
-            _db = new SQLiteConnection(_path);
-
-            var query = _db.Table<Entidades.tbl_Categoria>()
-                            .ToList();
-
-            List<CategoriaModel> todasLasCategorias = new List<CategoriaModel>();
-            if (query.Count > 0)
-            {
-                foreach (Entidades.tbl_Categoria item in query)
-                {
-                    CategoriaModel nCategoria = new CategoriaModel();
-                    nCategoria.id = item.Cat_Id;
-                    nCategoria.nombre = item.Cat_Nombre;
-
-                    todasLasCategorias.Add(nCategoria);
-                }
-            }
-
-            return todasLasCategorias;
-        }
-        #endregion
+                throw new Exception(e.Message);
+            }            
+        }    
+            #endregion
     }
 }

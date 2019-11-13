@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="duEco.View.Calendario"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             Title="Calendario">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:Calendar x:Name="calCalendario" Padding="10,0,10,0" StartDay="Sunday" SelectedBorderWidth="4" DisabledBorderColor="Black" />
+            <Button x:Name="btnNuevaAlerta" Text="Nueva Alerta" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="BtnNuevaAlerta_Clicked"/>
+            <Label x:Name="lblDetalle" Text="" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

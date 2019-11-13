@@ -18,21 +18,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Calendario.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Notificacion.xaml">
+    <Compile Update="View\CrearAlerta.xaml.cs">
+      <DependentUpon>CrearAlerta.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 
+  <ItemGroup>
     <EmbeddedResource Update="View\ABMHuerta.xaml">
-
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Catalogo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-
-    <EmbeddedResource Update="View\CrearRecordatorio.xaml">
-
     <EmbeddedResource Update="View\MisHuertas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -40,7 +37,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\VerHuerta.xaml">
-
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\VerPlanta.xaml">

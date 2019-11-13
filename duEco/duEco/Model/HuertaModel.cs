@@ -61,7 +61,7 @@ namespace duEco.Model
             _db.Dispose();
         }
 
-        public bool CrearHuerta(string nombreHuerta, string descriocion, string IdUser, string IdEncrip)
+        public bool CrearHuerta(string nombreHuerta, string descripcion, string IdUser, string IdEncrip)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace duEco.Model
                     Hue_Id = IdEncrip,
                     Hue_Nombre = nombreHuerta,
                     Hue_Usu_Id = IdUser,
-                    Hue_Descripcion = descriocion,
+                    Hue_Descripcion = descripcion,
                     Hue_Baja = "N"
                 };
                 _db.Insert(nuevaHuerta);
