@@ -17,7 +17,13 @@ namespace duEco.View
 		{
 			InitializeComponent ();
             MostrarHuertaSeleccionada(huertaID);
-		}
+            btnAgregar.Clicked += BtnAgregar_Clicked;
+        }
+
+        private void BtnAgregar_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new ABMCultivo());
+        }
 
         private void MostrarHuertaSeleccionada(string huertaID)
         {

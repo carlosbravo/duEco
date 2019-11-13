@@ -20,6 +20,8 @@
                 VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
                 <Label x:Name="DescripcionHuerta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Button Text="+ Cultivo" x:Name="btnAgregar"/>
+                
                 <!-- Comienza listar Cultivos-->
                 <StackLayout VerticalOptions="StartAndExpand" Padding="20">
                     <ListView ItemsSource="" BackgroundColor="Transparent" x:Name="lstCultivos" ItemSelected="LstCultivos_ItemSelected">
@@ -38,6 +40,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    
                 </StackLayout>
                 <!---->
             </StackLayout>
