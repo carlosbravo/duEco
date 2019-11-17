@@ -6,9 +6,9 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="Transparent">
             <!-- yyyy-dd-MM -->
-                <DatePicker BackgroundColor="#82BC75" Date="2019-11-10" MaximumDate="2022-12-31" MinimumDate="2019-10-01"></DatePicker>
+                <DatePicker x:Name="dpSiembra" BackgroundColor="#82BC75" Date="2019-11-10" MaximumDate="2022-12-31" MinimumDate="2019-10-01"></DatePicker>
             
-            <Button Text="Confirmar" />
+            <Button Text="Confirmar" x:Name="btnConfirmar"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

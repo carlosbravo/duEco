@@ -9,20 +9,29 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace duEco.View
-{
+{   
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class VerHuerta : ContentPage
 	{
-		public VerHuerta (string huertaID)
+        private string _huertaID;
+
+        public VerHuerta (string huertaID)
 		{
 			InitializeComponent ();
-            MostrarHuertaSeleccionada(huertaID);
+            _huertaID = huertaID;
+            MostrarHuertaSeleccionada(_huertaID);
             btnAgregar.Clicked += BtnAgregar_Clicked;
+            btnTodas.Clicked += BtnTodas_Clicked;
+        }
+
+        private void BtnTodas_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MisHuertas());
         }
 
         private void BtnAgregar_Clicked(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new ABMCultivo());
+            ((NavigationPage)this.Parent).PushAsync(new ABMCultivo(_huertaID));
         }
 
         private void MostrarHuertaSeleccionada(string huertaID)
@@ -32,8 +41,18 @@ namespace duEco.View
             {
                 NombreHuerta.Text = esHuerta.Nombre;
                 DescripcionHuerta.Text = esHuerta.Descripcion;
+
                 if(esHuerta.ListaCultivos.Count > 0)
                 {
+                    var cultivoTest = new Model.CultivoModel();
+                    foreach (var item in esHuerta.ListaCultivos)
+                    {
+                        if (item != null)
+                        {
+                            item.descripcion = "% Sembrado: 20";
+                        }
+                    }
+
                     lstCultivos.ItemsSource = esHuerta.ListaCultivos;
                 }
             }

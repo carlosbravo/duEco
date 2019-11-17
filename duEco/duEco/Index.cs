@@ -14,6 +14,7 @@ namespace duEco
     public class Index : ContentPage
     {
         private Model.UsuarioModel usuarioLogin;
+       
         Label title = new Label
         {
             Text = "Bienvenido a duEco",
@@ -46,6 +47,10 @@ namespace duEco
 
         public Index()
         {
+            MasterDetailPage master = new MasterDetailPage();
+            master.IsPresented = false;
+            master.IsGestureEnabled = false;
+            
             #region UsuarioDePrueba
             Model.UsuarioModel userTest = new Model.UsuarioModel
             {
@@ -108,6 +113,7 @@ namespace duEco
             stackLayout.BackgroundColor = Color.Transparent;
 
             Content = stackLayout;
+            NavigationPage.SetHasNavigationBar(this, false);
         }       
 
         private async void OnButtonClicked(object sender, EventArgs e)
@@ -121,6 +127,7 @@ namespace duEco
             {
                 App.Current.Properties["user"] = usuarioLogin.email;
                 App.Current.Properties["IsLoggedIn"] = true;
+                App.Current.MainPage = new View.MasterMenuPage();
                 await Navigation.PushAsync(new View.Home());
             }
             else

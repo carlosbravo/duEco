@@ -16,9 +16,9 @@
         <ScrollView>
             <StackLayout BackgroundColor="Transparent">
                 
-                <Label Text="Usuario " BackgroundColor="ForestGreen" TextColor="White"></Label>
+                <!--<Label Text="Usuario " BackgroundColor="ForestGreen" TextColor="White"></Label>
                 <Entry Text="" x:Name="usLog"/>
-                <Button Text="Salir" BackgroundColor="DarkRed" x:Name="btnSalir" MinimumWidthRequest="1" MinimumHeightRequest="1"/>
+                <Button Text="Salir" BackgroundColor="DarkRed" x:Name="btnSalir" MinimumWidthRequest="1" MinimumHeightRequest="1"/>-->
                 
                 <Frame ClassId="frmMisHuertas" BackgroundColor="DarkGreen">
                     <Button Text="MIS HUERTAS" x:Name="btnHuertas"/>

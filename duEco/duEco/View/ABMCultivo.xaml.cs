@@ -13,9 +13,11 @@ namespace duEco.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ABMCultivo : ContentPage
 	{
-		public ABMCultivo ()
+        private string _laHuertaId;
+		public ABMCultivo (string huertaID)
 		{
 			InitializeComponent ();
+            _laHuertaId = huertaID;
             cargarCatalogo();
         }
 
@@ -41,7 +43,7 @@ namespace duEco.View
             {
                 if (selectedPlanta != null)
                 {
-                    ((NavigationPage)this.Parent).PushAsync(new CultivoCalendario(item));
+                    ((NavigationPage)this.Parent).PushAsync(new CultivoCalendario(item, _laHuertaId));
                 }
             }
             catch (Exception x)

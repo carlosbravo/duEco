@@ -176,7 +176,6 @@ namespace duEco.Servicio
                     db.CreateTable<Entidades.tbl_Huerta>();
                 }
 
-                db.DropTable<Entidades.tbl_Cultivo>();
                 var existCultivo = db.GetTableInfo("tbl_Cultivo");
                 if (existCultivo.Count == 0)
                 {
@@ -370,7 +369,10 @@ namespace duEco.Servicio
                 //    var allUsuarios = db.Query<Entidades.tbl_Usuario>("SELECT * FROM tbl_Usuario");
                 //    var allEtapas = db.Query<Entidades.tbl_Etapa>("SELECT * FROM tbl_Etapa");
                 //    var allTareas = db.Query<Entidades.tbl_Tarea>("SELECT * FROM tbl_Tarea");
-                var allTareas = db.Query<Entidades.tbl_Planta>("SELECT * FROM tbl_Planta");
+                //var allTareas = db.Query<Entidades.tbl_Planta>("SELECT * FROM tbl_Planta");
+                var allHuertas = db.Table<Entidades.tbl_Huerta>().ToList();
+                var allCultivos = db.Table<Entidades.tbl_Cultivo>().ToList();
+
             }
             catch (Exception c)
             {

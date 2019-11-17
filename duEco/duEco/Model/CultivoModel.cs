@@ -73,22 +73,23 @@ namespace duEco.Model
             {
                 var nuevaCultivo = new Entidades.tbl_Cultivo
                 {
-                    Cul_Id = idCultivo,
-                    Cul_Nombre = Cultivo.nombre,
-                    Cul_Pla_Id = Cultivo.id,
+                    Cul_Id = Id,
+                    Cul_Nombre = Cultivo.NombreCultivo,
+                    Cul_Pla_Id = idCultivo,
                     Cul_Hue_Id = huertaId,
-                    Cul_FinSiembra = Cultivo.finSiembra,
-                    Cul_IniciaCultivo = Cultivo.iniciaCultivo,
-                    Cul_FinCosecha = Cultivo.finCosecha,
+                    Cul_FinSiembra = Cultivo.FinSiembra,
+                    Cul_IniciaCultivo = Cultivo.IniciaCultivo,
+                    Cul_FinCosecha = Cultivo.FinCosecha,
                     Cul_Baja = "N"
                 };
-                _db.Insert(Cultivo);
+                _db.Insert(nuevaCultivo);
+
+                var tableTP = _db.Table<Entidades.tbl_Cultivo>().ToList();
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                throw e;
             }
         }
 
@@ -104,7 +105,7 @@ namespace duEco.Model
                 var updCultivo = new Entidades.tbl_Cultivo
                 {
                     Cul_Id = Cultivo.idCultivo,
-                    Cul_Nombre = Cultivo.nombre,
+                    Cul_Nombre = Cultivo.NombreCultivo,
                     Cul_IniciaCultivo = Cultivo.iniciaCultivo,
                     Cul_FinSiembra = Cultivo.finSiembra,
                     Cul_FinCosecha = Cultivo.finCosecha
@@ -186,8 +187,15 @@ namespace duEco.Model
                 {
                     foreach (Entidades.tbl_Cultivo item in lst)
                     {
-                        CultivoModel nCultivo = ConsultarPorId(item.Cul_Id);
-
+                        CultivoModel nCultivo = new CultivoModel
+                        {
+                            idCultivo = item.Cul_Id,
+                            NombreCultivo = item.Cul_Nombre,
+                            id = item.Cul_Pla_Id,
+                            FinCosecha = item.Cul_FinCosecha,
+                            IniciaCultivo = item.Cul_IniciaCultivo,
+                            FinSiembra = item.Cul_FinSiembra
+                        };
                         todasLasCultivos.Add(nCultivo);
                     }
                 }

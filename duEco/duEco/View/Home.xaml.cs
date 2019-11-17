@@ -19,10 +19,10 @@ namespace duEco.View
             var isLoggedIn = App.Current.Properties.ContainsKey("IsLoggedIn") ? (bool)App.Current.Properties["IsLoggedIn"] : false;
             if (isLoggedIn)
             {
-                usLog.Text = App.Current.Properties["user"].ToString();
+                //usLog.Text = App.Current.Properties["user"].ToString();
                 btnCatalogo.Clicked += btnCatalogo_Clicked;
                 btnHuertas.Clicked += btnHuertas_Clicked;
-                btnSalir.Clicked += btnSalir_Clicked;
+                //btnSalir.Clicked += btnSalir_Clicked;
             }
             else
             {
@@ -39,6 +39,7 @@ namespace duEco.View
         private void btnSalir_Clicked(object sender, EventArgs e)
         {
             App.Current.Properties["IsLoggedIn"] = false;
+            App.Current.Properties["user"] = null;
             Navigation.PushAsync(new Index());
         }
 
