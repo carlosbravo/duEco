@@ -6,10 +6,28 @@
              Title="Calendario">
     
     <ContentPage.Content>
-        <StackLayout>
-            <controls:Calendar x:Name="calCalendario" Padding="10,0,10,0" StartDay="Sunday" SelectedBorderWidth="4" DisabledBorderColor="Black" />
-            <Button x:Name="btnNuevaAlerta" Text="Nueva Alerta" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="BtnNuevaAlerta_Clicked"/>
-            <Label x:Name="lblDetalle" Text="" />
-        </StackLayout>
+
+        <ScrollView>
+            <StackLayout BackgroundColor="Transparent">
+                
+                <controls:Calendar x:Name="calCalendario" Padding="10,0,10,0" StartDay="Sunday" SelectedBorderWidth="4" DisabledBorderColor="Black" DateClicked="CalCalendario_DateClicked" />
+                
+                <Button x:Name="btnNuevaAlerta" Text="Nueva Alerta" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="BtnNuevaAlerta_Clicked"/>
+
+                <ListView ItemsSource="" BackgroundColor="Transparent" x:Name="lstAlertas" ItemSelected="LstAlertas_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout BackgroundColor="#ECFCF4" Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Descripcion}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

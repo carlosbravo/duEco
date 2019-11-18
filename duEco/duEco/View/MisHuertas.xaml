@@ -26,7 +26,6 @@
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="{Binding Nombre}"/>
                                         <Label Text="{Binding Descripcion}"/>
-                                        
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>

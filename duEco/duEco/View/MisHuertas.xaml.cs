@@ -46,8 +46,7 @@ namespace duEco.View
             if (misHuertas.Count > 0)
             {
                 lstHuertas.ItemsSource = misHuertas;
-            }
-            
+            }            
         }
 
         private void OnSelection(object sender, SelectedItemChangedEventArgs e)

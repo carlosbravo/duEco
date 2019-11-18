@@ -49,30 +49,36 @@ namespace duEco.View
 
         private async void BtnCrearAlerta_Clicked(object sender, EventArgs e)
         {
-            DateTime dtmFinal = new DateTime(dtmFechaRec.Year,
+            var userLog = App.Current.Properties["user"].ToString();
+
+            if (userLog != null)
+            {
+
+                DateTime dtmFinal = new DateTime(dtmFechaRec.Year,
                                                 dtmFechaRec.Month,
                                                 dtmFechaRec.Day,
                                                 tmpHora.Time.Hours,
                                                 tmpHora.Time.Minutes,
                                                 00);
 
-            HuertaModel objHuertaSelec = new HuertaModel();
-            objHuertaSelec = (HuertaModel)cmbHuertas.SelectedItem;
-            String strIdHuertaSelec = objHuertaSelec.Id;
+                HuertaModel objHuertaSelec = new HuertaModel();
+                objHuertaSelec = (HuertaModel)cmbHuertas.SelectedItem;
+                String strIdHuertaSelec = objHuertaSelec.Id;
 
-            TipoAlertaModel objTipoAlertaSelec = new TipoAlertaModel();
-            objTipoAlertaSelec = (TipoAlertaModel)cmbTipoAlerta.SelectedItem;
-            String strIdTipoAlertaSelec = objTipoAlertaSelec.Id;                        
+                TipoAlertaModel objTipoAlertaSelec = new TipoAlertaModel();
+                objTipoAlertaSelec = (TipoAlertaModel)cmbTipoAlerta.SelectedItem;
+                String strIdTipoAlertaSelec = objTipoAlertaSelec.Id;
 
-            var ok = AlertaServicio.CrearAlerta(strIdHuertaSelec, txtDescripcion.Text, dtmFinal, chkAvisa.IsToggled, strIdTipoAlertaSelec);
-            if (ok)
-            {
-                await DisplayAlert("Registro correcto", "La alerta se ha grabado correctamente", "Ok");
-                await Navigation.PushAsync(new Calendario());
-            }
-            else
-            {
-                await DisplayAlert("Registro incorrecto", "Revise los datos ingresados", "Cancelar");
+                var ok = AlertaServicio.CrearAlerta(userLog, strIdHuertaSelec, txtDescripcion.Text, dtmFinal, chkAvisa.IsToggled, strIdTipoAlertaSelec);
+                if (ok)
+                {
+                    await DisplayAlert("Registro correcto", "La alerta se ha grabado correctamente", "Ok");
+                    await Navigation.PushAsync(new Calendario());
+                }
+                else
+                {
+                    await DisplayAlert("Registro incorrecto", "Revise los datos ingresados", "Cancelar");
+                }
             }
         }
     }    

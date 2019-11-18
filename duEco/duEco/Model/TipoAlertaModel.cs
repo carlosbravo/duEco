@@ -66,7 +66,36 @@ namespace duEco.Model
 
             return lstTiposAlerta;
         }
-     
+
+        public TipoAlertaModel ConsultarPorId(String tipoAlertaID)
+        {
+            try
+            {
+                var qTipoAlerta = _db.Table<Entidades.tbl_TipoAlerta>()
+                            .Where(t => t.TAl_Id == tipoAlertaID)
+                            .FirstOrDefault();
+
+                //IEnumerable<Entidades.tbl_Usuario> resultado = SELECT_WHERE(_db, usuarioLogin);
+                if (qTipoAlerta != null)
+                {
+                    return new TipoAlertaModel
+                    {
+                        Id = qTipoAlerta.TAl_Id,
+                        Descripcion = qTipoAlerta.TAl_Descripcion,
+                        Baja = qTipoAlerta.TAl_Baja                                                
+                    };
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         #endregion
     }
 }

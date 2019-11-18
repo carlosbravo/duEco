@@ -11,5 +11,10 @@ namespace duEco.Servicio
         {
             return new TipoAlertaModel().obtenerTodosTiposAlerta();
         }
+
+        internal static TipoAlertaModel BuscarPorId(String tipoAlertaID)
+        {
+            return new TipoAlertaModel().ConsultarPorId(tipoAlertaID);
+        }
     }
 }

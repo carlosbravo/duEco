@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="duEco.View.VerAlerta"
+             Title="Detalle Alerta">
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#539539"/>
+                <Setter Property="WidthRequest" Value="220"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="Transparent">
+                <Label x:Name="lblFechaAlerta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Fecha"/>
+                <DatePicker x:Name="dtpFechaAlerta" 
+                    TextColor="#539539" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"/>
+
+                <Label x:Name="lblHoraAlerta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Hora"/>
+                <TimePicker x:Name="tmpHora" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"/>
+
+                <Label x:Name="lblDescrAlerta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Descripción"/>
+                <Entry x:Name="txtDescripcion"                      
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"/>
+
+                <Label x:Name="lblNotificacion" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Envía Notificación"/>
+                <Switch x:Name="chkAvisa"                    
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"/>
+
+                <Label x:Name="lblTipoAlerta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Tipo de Alerta"/>
+                <Picker x:Name="cmbTipoAlerta"                    
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"
+                    ItemDisplayBinding="{Binding Descripcion}"/>
+
+                <Label x:Name="lblHuerta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Huerta"/>
+                <Entry x:Name="txtHuerta" 
+                    IsEnabled="False"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"/>
+
+                <!--BOTONES-->
+                <Button x:Name="btnHabilitaEdicion" 
+                    Text="Editar" 
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
+                    Clicked="BtnHabilitaEdicion_Clicked"/>
+                
+                <Button x:Name="btnEditarAlerta" 
+                    Text="Confirmar Edición" 
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
+                    Clicked="BtnEditarAlerta_Clicked"/>
+                
+                <Button x:Name="btnEliminarAlerta" 
+                    Text="Eliminar" 
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
+                    Clicked="BtnEliminarAlerta_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

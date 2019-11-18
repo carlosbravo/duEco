@@ -142,10 +142,9 @@ namespace duEco.Model
                     return null;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                throw new Exception(e.Message);
             }
         }
 
@@ -173,10 +172,9 @@ namespace duEco.Model
 
                 return todasLasHuertas;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                throw new Exception(e.Message);
             }
         }
         #endregion

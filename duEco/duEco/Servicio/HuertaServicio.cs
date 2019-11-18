@@ -26,8 +26,7 @@ namespace duEco.Servicio
             var objUsuario = new UsuarioModel();
 
             var idUser = objUsuario.ConsultarPorLog(userLog);
-            return new HuertaModel().CrearHuerta(text1, text2, idUser, CoreServicio.Encrypt.GetMD5(text1.Substring(2)));
-                         
+            return new HuertaModel().CrearHuerta(text1, text2, idUser, CoreServicio.Encrypt.GetMD5(text1.Substring(2)));                         
         }
     }
 }

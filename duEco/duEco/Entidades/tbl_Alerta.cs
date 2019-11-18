@@ -18,6 +18,9 @@ namespace duEco.Entidades
         public int Ale_Id { get; set; }
 
         [MaxLength(36)]
+        public string Ale_Usu_Id { get; set; }
+
+        [MaxLength(36)]
         public String Ale_Hue_Id { get; set; }
 
         [MaxLength(300)]

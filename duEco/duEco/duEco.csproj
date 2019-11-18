@@ -21,6 +21,9 @@
     <Compile Update="View\CrearAlerta.xaml.cs">
       <DependentUpon>CrearAlerta.xaml</DependentUpon>
     </Compile>
+    <Compile Update="View\VerAlerta.xaml.cs">
+      <DependentUpon>VerAlerta.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
