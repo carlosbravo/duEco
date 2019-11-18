@@ -52,7 +52,7 @@ namespace duEco.View
                             item.descripcion = "% Sembrado: 20";
                         }
                     }
-
+                    
                     lstCultivos.ItemsSource = esHuerta.ListaCultivos;
                 }
             }

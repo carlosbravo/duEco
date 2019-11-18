@@ -35,7 +35,7 @@
                                         <!--<StackLayout Orientation="Horizontal">-->
                                             <Label Text="{Binding NombreCultivo }"/>
                                             <Label Text="{Binding descripcion}"/>
-                                            <ProgressBar x:Name="pgbar" Progress="20" ProgressColor="AliceBlue" />
+                                            <ProgressBar x:Name="pgbar" Progress="20.00" BackgroundColor="AliceBlue" />
                                         <!--</StackLayout>-->
                                     </StackLayout>
                                 </ViewCell>
