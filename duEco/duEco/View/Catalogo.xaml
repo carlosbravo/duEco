@@ -17,7 +17,7 @@
         <ScrollView>
             <StackLayout BackgroundColor="Transparent">
                 <!--<Label Text="Todas" HorizontalOptions="Center"/>-->
-                <Picker Title="Seleccione una Categoria" x:Name="ddlCategorias" HorizontalOptions="FillAndExpand">
+                <Picker Title="Seleccione una Categoria" x:Name="ddlCategorias" HorizontalOptions="FillAndExpand" SelectedIndexChanged="DdlCategorias_SelectedIndexChanged">
                 </Picker>
 
                 <ListView ItemsSource="" BackgroundColor="Transparent" x:Name="lstPlantas" ItemSelected="OnSelection">

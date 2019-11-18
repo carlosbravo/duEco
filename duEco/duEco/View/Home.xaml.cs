@@ -22,6 +22,8 @@ namespace duEco.View
                 //usLog.Text = App.Current.Properties["user"].ToString();
                 btnCatalogo.Clicked += btnCatalogo_Clicked;
                 btnHuertas.Clicked += btnHuertas_Clicked;
+                btnCalendario.Clicked += btnCalendario_Clicked;
+                btnReconocer.Clicked += btnReconocer_Clicked;
                 //btnSalir.Clicked += btnSalir_Clicked;
             }
             else
@@ -30,6 +32,11 @@ namespace duEco.View
                 Navigation.PushAsync(new Index());
             }
 		}
+
+        private void btnReconocer_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new View.ReconocerPlanta());
+        }
 
         private void btnHuertas_Clicked(object sender, EventArgs e)
         {
@@ -47,6 +54,11 @@ namespace duEco.View
         {
             ((NavigationPage)this.Parent).PushAsync(new View.Catalogo());
 
+        }
+
+        private void btnCalendario_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new View.Calendario());
         }
     }
 }

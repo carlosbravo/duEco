@@ -1,4 +1,5 @@
-﻿using duEco.Servicio;
+﻿using duEco.Model;
+using duEco.Servicio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,6 +37,11 @@ namespace duEco.View
         private void cargarCatalogo()
         {
             var plantasCatalogo = PlantaServicio.todasLasPlantas();
+            listarEnCatalogo(plantasCatalogo);
+        }
+
+        private void listarEnCatalogo(List<PlantaModel> plantasCatalogo)
+        {
             foreach (var item in plantasCatalogo)
             {
                 item.imagenPortada = Device.RuntimePlatform == Device.Android ?
@@ -62,6 +68,14 @@ namespace duEco.View
                 throw x;
             }
             
+        }
+
+        private void DdlCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var itemSelec = ddlCategorias.SelectedIndex;
+            var ddlitems = ddlCategorias.Items;
+            var plantasCatalogoFiltro = PlantaServicio.obtenerByCategoria(itemSelec);
+            listarEnCatalogo(plantasCatalogoFiltro);
         }
     }
 }
