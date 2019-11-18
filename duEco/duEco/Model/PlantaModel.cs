@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace duEco.Model
@@ -170,6 +171,51 @@ namespace duEco.Model
             }
 
             return todasLasCategorias;
+        }
+
+        public List<PlantaModel> obtenerById(string itemSelec)
+        {
+            var query = (from pl in _db.Table<Entidades.tbl_Planta>()
+                          from tp in _db.Table<Entidades.tbl_TipoPlanta>()
+                          where pl.Pla_TPl_Id == tp.TPl_Id
+                                && tp.TPl_Cat_Id == itemSelec
+                          select pl).ToList();
+
+            List <PlantaModel> todasLasPlantas = new List<PlantaModel>();
+            if (query.Count > 0)
+            {
+                string urlImg = "iso_v7.PNG";
+                foreach (Entidades.tbl_Planta item in query)
+                {
+                    PlantaModel nPlanta = new PlantaModel();
+                    nPlanta.id = item.Pla_Id;
+                    nPlanta.nombre = item.Pla_Nombre;
+                    nPlanta.imagenPortada = urlImg;
+                    nPlanta.dificultad = item.Pla_Dificultad;
+                    todasLasPlantas.Add(nPlanta);
+                }
+            }
+           
+            return todasLasPlantas;
+        }
+
+        public string obtenerIdCategoria(int itemSelec)
+        {
+            var setDatos = todasLasCategorias();
+            string strID = "";
+
+            switch (itemSelec)
+            {
+                case 0:
+                    strID = setDatos.Where(c => c.nombre == "Hortaliza").Select(c => c.id).FirstOrDefault(); break;
+                case 1:
+                    strID = setDatos.Where(c => c.nombre == "Aromatica").Select(c => c.id).FirstOrDefault(); break;
+                case 2:
+                    strID = setDatos.Where(c => c.nombre == "Arbusto").Select(c => c.id).FirstOrDefault(); break;
+                default:
+                    break;
+            }
+            return strID;
         }
         #endregion
     }

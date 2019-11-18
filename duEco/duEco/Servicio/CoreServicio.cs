@@ -133,6 +133,7 @@ namespace duEco.Servicio
 
                 //TABLA TIPO PLANTA: CREACIÓN Y CARGA INICIAL
                 var existTipoPlanta = db.GetTableInfo("tbl_TipoPlanta"); //db.Query<Entidades.tbl_Usuario>("SELECT count(*) FROM sqlite_master WHERE type = 'Table' AND name = 'tbl_Planta' ");
+                
                 if (existTipoPlanta.Count == 0)
                 {
                     db.CreateTable<Entidades.tbl_TipoPlanta>();
@@ -169,15 +170,15 @@ namespace duEco.Servicio
                     db.CreateTable<Entidades.tbl_Categoria>();
                     var newCategoria = new Entidades.tbl_Categoria();
                     newCategoria.Cat_Id = "48846075a34c2cf241c9c9300ae921f3";
-                    newCategoria.Cat_Nombre = "Hortaliza";
+                    newCategoria.Cat_Nombre = "Hortaliza";// item 0
                     db.Insert(newCategoria);
 
                     newCategoria.Cat_Id = "a4fdh2d512gs3gee31h25tfea2s3ee3";
-                    newCategoria.Cat_Nombre = "Aromatica";
+                    newCategoria.Cat_Nombre = "Aromatica";//item 1
                     db.Insert(newCategoria);
 
                     newCategoria.Cat_Id = "6e51043bf9a7fb8f70092ce86474bcf7";
-                    newCategoria.Cat_Nombre = "Arbusto";
+                    newCategoria.Cat_Nombre = "Arbusto"; // item 2
                     db.Insert(newCategoria);
 
                     var tableC = db.Table<Entidades.tbl_Categoria>();
@@ -190,7 +191,6 @@ namespace duEco.Servicio
                     db.CreateTable<Entidades.tbl_Huerta>();
                 }
 
-                db.DropTable<Entidades.tbl_Cultivo>();
                 var existCultivo = db.GetTableInfo("tbl_Cultivo");
                 if (existCultivo.Count == 0)
                 {
@@ -386,9 +386,10 @@ namespace duEco.Servicio
                 //    var allUsuarios = db.Query<Entidades.tbl_Usuario>("SELECT * FROM tbl_Usuario");
                 //    var allEtapas = db.Query<Entidades.tbl_Etapa>("SELECT * FROM tbl_Etapa");
                 //    var allTareas = db.Query<Entidades.tbl_Tarea>("SELECT * FROM tbl_Tarea");
-                var allTareas = db.Query<Entidades.tbl_Planta>("SELECT * FROM tbl_Planta");
-
-
+                //    var allTareas = db.Query<Entidades.tbl_Planta>("SELECT * FROM tbl_Planta");
+                //    var allHuertas = db.Table<Entidades.tbl_Huerta>().ToList();
+                //    var allCultivos = db.Table<Entidades.tbl_Cultivo>().ToList();
+				
                 //TABLA TIPO ALERTA: CREACIÓN Y CARGA INICIAL
                 var existTipoAlerta = db.GetTableInfo("tbl_TipoAlerta");
                 if (existTipoAlerta.Count == 0)

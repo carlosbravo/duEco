@@ -9,6 +9,7 @@ namespace duEco.Model
 {
     public class AlertaModel
     {
+
         private int id;        
         public int Id
         {

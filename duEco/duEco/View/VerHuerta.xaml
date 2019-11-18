@@ -16,28 +16,33 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="Transparent">
+                <Frame BackgroundColor="Transparent">
+                    <Button FontSize="Large" Text="&lt; Ver todas" x:Name="btnTodas" BackgroundColor="Transparent" TextColor="DarkGray" BorderColor="DarkGray"/>
+                </Frame>
                 <Label x:Name="NombreHuerta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
                 VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
                 <Label x:Name="DescripcionHuerta" TextColor="#539539" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Button Text="+ Cultivo" x:Name="btnAgregar"/>
+                
                 <!-- Comienza listar Cultivos-->
-                <StackLayout VerticalOptions="StartAndExpand" Padding="20">
-                    <ListView ItemsSource="" BackgroundColor="Transparent" x:Name="lstCultivos" ItemSelected="LstCultivos_ItemSelected">
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <ListView ItemsSource="" BackgroundColor="Transparent" x:Name="lstCultivos" ItemSelected="LstCultivos_ItemSelected" RowHeight="100">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout BackgroundColor="#ECFCF4"
-                        Orientation="Vertical">
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding nombre}"/>
+                                <ViewCell Height="200">
+                                    <StackLayout BackgroundColor="#ECFCF4" Margin="10,0">
+                                        <!--<StackLayout Orientation="Horizontal">-->
+                                            <Label Text="{Binding NombreCultivo }"/>
                                             <Label Text="{Binding descripcion}"/>
-
-                                        </StackLayout>
+                                            <ProgressBar x:Name="pgbar" Progress="20.00" BackgroundColor="AliceBlue" />
+                                        <!--</StackLayout>-->
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    
                 </StackLayout>
                 <!---->
             </StackLayout>

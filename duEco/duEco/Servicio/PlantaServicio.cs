@@ -22,5 +22,13 @@ namespace duEco.Servicio
         {
            return new PlantaModel().buscarPorId(v);
         }
+
+        internal static List<PlantaModel> obtenerByCategoria(int itemSelec)
+        {
+            var dbPlanta = new PlantaModel();
+            string CategoriaID = dbPlanta.obtenerIdCategoria(itemSelec);
+
+            return dbPlanta.obtenerById(CategoriaID);
+        }
     }
 }

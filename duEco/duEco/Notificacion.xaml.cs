@@ -23,8 +23,8 @@ namespace duEco
         {
             CrossLocalNotifications.Current.Show("Xamarin Latino", "Hello, this is a local notification from Xamarin Forms", 0, DateTime.Now.AddSeconds(5));
             //CrossLocalNotifications.Current.Show("Xamarin Latino", "Hello, this is a local notification from Xamarin Forms", 0, new DateTime(2019,11,3,18,43,00));
-            
-        }        
+        }
+
 
         private void BtnCancelarNotificacion_Clicked(object sender, EventArgs e)
         {

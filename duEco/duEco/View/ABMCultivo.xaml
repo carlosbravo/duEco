@@ -1,29 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="duEco.View.Catalogo"
-             Title="Catalogo">
+             x:Class="duEco.View.ABMCultivo"
+             Title="Elegir Cultivo">
     <Page.Resources>
         <ResourceDictionary>
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#539539"/>
-                <Setter Property="WidthRequest" Value="200"/>
+                <Setter Property="WidthRequest" Value="220"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontSize" Value="Medium"/>
             </Style>
         </ResourceDictionary>
     </Page.Resources>
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="Transparent">
-                <!--<Label Text="Todas" HorizontalOptions="Center"/>-->
-                <Picker Title="Seleccione una Categoria" x:Name="ddlCategorias" HorizontalOptions="FillAndExpand" SelectedIndexChanged="DdlCategorias_SelectedIndexChanged">
-                </Picker>
-
                 <ListView ItemsSource="" BackgroundColor="Transparent" x:Name="lstPlantas" ItemSelected="OnSelection">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                           <!-- <ImageCell x:Name="icPlanta" Text="{Binding nombre}" Detail="{Binding id}" ImageSource="{Binding imagenPortada}" TextColor="White" DetailColor="WhiteSmoke"></ImageCell>-->
+                            <!-- <ImageCell x:Name="icPlanta" Text="{Binding nombre}" Detail="{Binding id}" ImageSource="{Binding imagenPortada}" TextColor="White" DetailColor="WhiteSmoke"></ImageCell>-->
                             <ViewCell>
                                 <StackLayout BackgroundColor="#ECFCF4"
                         Orientation="Vertical">
@@ -41,7 +38,9 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-              
+
+                <Button Text="Actualizar" x:Name="btnActualizar" />
+                <Button Text="Eliminar" x:Name="btnEliminar" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

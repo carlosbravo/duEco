@@ -1,7 +1,5 @@
-﻿using duEco.Model;
-using duEco.Servicio;
+﻿using duEco.Servicio;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,35 +11,19 @@ using Xamarin.Forms.Xaml;
 namespace duEco.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Catalogo : ContentPage
+	public partial class ABMCultivo : ContentPage
 	{
-        public Catalogo()
-        {
-            InitializeComponent();
-
+        private string _laHuertaId;
+		public ABMCultivo (string huertaID)
+		{
+			InitializeComponent ();
+            _laHuertaId = huertaID;
             cargarCatalogo();
-            listarCategorias();
-            
-        }
-
-        private void listarCategorias()
-        {
-            List<Model.CategoriaModel> lasCategorias = PlantaServicio.obtenerCategorias(); //new List<Model.CategoriaModel>();
-
-            foreach (Model.CategoriaModel categoria in lasCategorias)
-            {
-                ddlCategorias.Items.Add(categoria.nombre);
-            }
         }
 
         private void cargarCatalogo()
         {
             var plantasCatalogo = PlantaServicio.todasLasPlantas();
-            listarEnCatalogo(plantasCatalogo);
-        }
-
-        private void listarEnCatalogo(List<PlantaModel> plantasCatalogo)
-        {
             foreach (var item in plantasCatalogo)
             {
                 item.imagenPortada = Device.RuntimePlatform == Device.Android ?
@@ -50,6 +32,7 @@ namespace duEco.View
             }
 
             lstPlantas.ItemsSource = plantasCatalogo;
+
         }
 
         void OnSelection(object sender, SelectedItemChangedEventArgs e)
@@ -60,22 +43,13 @@ namespace duEco.View
             {
                 if (selectedPlanta != null)
                 {
-                    ((NavigationPage)this.Parent).PushAsync(new VerPlanta(item));
+                    ((NavigationPage)this.Parent).PushAsync(new CultivoCalendario(item, _laHuertaId));
                 }
             }
             catch (Exception x)
             {
                 throw x;
             }
-            
-        }
-
-        private void DdlCategorias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var itemSelec = ddlCategorias.SelectedIndex;
-            var ddlitems = ddlCategorias.Items;
-            var plantasCatalogoFiltro = PlantaServicio.obtenerByCategoria(itemSelec);
-            listarEnCatalogo(plantasCatalogoFiltro);
         }
     }
 }

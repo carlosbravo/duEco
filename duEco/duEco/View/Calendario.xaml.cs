@@ -34,15 +34,6 @@ namespace duEco.View
             }
         }
 
-        //private void CargarAlertas(string userLog)
-        //{
-        //    lstMisAlertas = AlertaServicio.TodasLasAlertas(userLog);
-        //    if (lstMisAlertas.Count > 0)
-        //    {
-        //        lstAlertas.ItemsSource = lstMisAlertas;
-        //    }
-        //}
-
         private void CargarAlertas(string userLog)
         {
             lstMisAlertas = AlertaServicio.TodasLasAlertas(userLog);

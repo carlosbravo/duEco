@@ -17,13 +17,13 @@ namespace duEco.View
         DateTime dtmFechaRec;
 
         public CrearAlerta(DateTime dtmFechaCreacion)
-		{
-			InitializeComponent ();
+        {
+            InitializeComponent();
 
             //COMPRUEBO QUE ESTÉ LOGUEADO Y BUSCO LAS HUERTAS DEL USUARIO PARA BINDEAR CON EL COMBO
             bool isLoggedIn = App.Current.Properties.ContainsKey("IsLoggedIn") ? (bool)App.Current.Properties["IsLoggedIn"] : false;
             if (isLoggedIn)
-            {                                
+            {
                 String userLog = App.Current.Properties["user"].ToString();
 
                 var misHuertas = HuertaServicio.TodasLasHuertas(userLog);
@@ -40,7 +40,8 @@ namespace duEco.View
 
             //OBTENGO LA LISTA DE TIPOS DE ALERTA PARA BINDEAR CON EL COMBO
             var lstTiposAlerta = TipoAlertaServicio.todosLosTiposAlerta();
-            cmbTipoAlerta.ItemsSource = lstTiposAlerta;            
+
+            cmbTipoAlerta.ItemsSource = lstTiposAlerta;
 
             //LA FECHA DE LA ALERTA YA VIENE DE LA PANTALLA ANTERIOR (CALENDARIO)
             dtmFechaRec = dtmFechaCreacion;
@@ -53,7 +54,6 @@ namespace duEco.View
 
             if (userLog != null)
             {
-
                 DateTime dtmFinal = new DateTime(dtmFechaRec.Year,
                                                 dtmFechaRec.Month,
                                                 dtmFechaRec.Day,
@@ -83,6 +83,3 @@ namespace duEco.View
         }
     }    
 }
-
-
-

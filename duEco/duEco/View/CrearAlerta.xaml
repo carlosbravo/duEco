@@ -12,6 +12,7 @@
             <TimePicker x:Name="tmpHora"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"/>
+
             <Entry x:Name="txtDescripcion" 
                     Placeholder="Descripción" 
                     VerticalOptions="CenterAndExpand" 

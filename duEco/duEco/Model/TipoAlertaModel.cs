@@ -17,7 +17,7 @@ namespace duEco.Model
         }
 
         private string descripcion;
-        public string  Descripcion
+        public string Descripcion
         {
             get { return descripcion; }
             set { descripcion = value; }
@@ -54,6 +54,7 @@ namespace duEco.Model
             List<TipoAlertaModel> lstTiposAlerta = new List<TipoAlertaModel>();
             if (query.Count > 0)
             {                
+
                 foreach (Entidades.tbl_TipoAlerta item in query)
                 {
                     TipoAlertaModel objTipoAlerta = new TipoAlertaModel();
@@ -63,7 +64,6 @@ namespace duEco.Model
                     lstTiposAlerta.Add(objTipoAlerta);
                 }
             }
-
             return lstTiposAlerta;
         }
 
@@ -95,7 +95,6 @@ namespace duEco.Model
                 throw new Exception(e.Message);
             }
         }
-
         #endregion
     }
 }

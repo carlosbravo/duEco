@@ -53,6 +53,7 @@ namespace duEco
             stackLayout.BackgroundColor = Color.Transparent;
 
             Content = stackLayout;
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private async void registrarNuevoUsuario(string text1, string text2)
