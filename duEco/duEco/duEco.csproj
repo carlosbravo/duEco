@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.30" />
+    <PackageReference Include="Microcharts" Version="0.7.1" />
+    <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
     <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
@@ -22,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\MenuGraficos.xaml.cs">
+      <DependentUpon>MenuGraficos.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\CrearAlerta.xaml.cs">
       <DependentUpon>CrearAlerta.xaml</DependentUpon>
     </Compile>
@@ -31,9 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Notificacion.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\ABMCultivo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -59,6 +61,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\VerCultivo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\VerGrafico.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\VerHuerta.xaml">

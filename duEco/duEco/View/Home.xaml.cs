@@ -24,6 +24,7 @@ namespace duEco.View
                 btnHuertas.Clicked += btnHuertas_Clicked;
                 btnCalendario.Clicked += btnCalendario_Clicked;
                 btnReconocer.Clicked += btnReconocer_Clicked;
+                btnGraficos.Clicked += btnGrafico_Clicked;
                 //btnSalir.Clicked += btnSalir_Clicked;
 
             }
@@ -59,6 +60,11 @@ namespace duEco.View
         private void btnCalendario_Clicked(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new View.Calendario());
+        }
+
+        private void btnGrafico_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new View.MenuGraficos());
         }
     }
 }

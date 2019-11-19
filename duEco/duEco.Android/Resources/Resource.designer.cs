@@ -2037,6 +2037,7 @@ namespace duEco.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::duEco.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::duEco.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::duEco.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::Microcharts.Droid.Resource.String.library_name = global::duEco.Droid.Resource.String.library_name;
 			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::duEco.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::duEco.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::duEco.Droid.Resource.Animation.abc_fade_out;

@@ -174,6 +174,42 @@ namespace duEco.Model
             }
         }
 
+        public List<AlertaModel> ConsultarPorHuerta(string huertaID)
+        {
+            try
+            {
+                var lst = _db.Table<Entidades.tbl_Alerta>()
+                         .Where(a => a.Ale_Baja == "N" && a.Ale_Hue_Id == huertaID)
+                        .ToList();
+
+                List<AlertaModel> AlertasPorHuerta = new List<AlertaModel>();
+                if (lst.Count > 0)
+                {
+                    foreach (Entidades.tbl_Alerta item in lst)
+                    {
+                        AlertaModel nAlerta = new AlertaModel();
+
+                        nAlerta.id = item.Ale_Id;
+                        nAlerta.usuarioId = item.Ale_Usu_Id;
+                        nAlerta.huertaId = item.Ale_Hue_Id;
+                        nAlerta.descripcion = item.Ale_Descripcion;
+                        nAlerta.fechaHora = item.Ale_Fecha_Hora;
+                        nAlerta.avisa = item.Ale_Avisa;
+                        nAlerta.tipoAlertaId = item.Ale_TAl_Id;
+                        nAlerta.baja = item.Ale_Baja;
+
+                        AlertasPorHuerta.Add(nAlerta);
+                    }
+                }
+
+                return AlertasPorHuerta;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public List<AlertaModel> ConsultarPorDia(string usuarioID, DateTime FechaDesde, DateTime FechaHasta)
         {
             try

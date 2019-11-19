@@ -24,13 +24,16 @@
                     <Button Text="MIS HUERTAS" x:Name="btnHuertas"/>
                 </Frame>
                 <Frame BackgroundColor="DarkGreen">
-                    <Button x:Name="btnCatalogo" Text="CATALOGO"/>
+                    <Button x:Name="btnCatalogo" Text="CATÁLOGO"/>
                 </Frame>
                 <Frame BackgroundColor="DarkGreen">
                     <Button Text="RECONOCER PLANTA" x:Name="btnReconocer"/>
                 </Frame>
                 <Frame BackgroundColor="DarkGreen">
                     <Button Text="CALENDARIO" x:Name="btnCalendario" />
+                </Frame>
+                <Frame BackgroundColor="DarkGreen">
+                    <Button Text="GRÁFICOS" x:Name="btnGraficos" />
                 </Frame>
                 <Label Text="Fuente: https://inta.gob.ar/sites/default/files/script-tmp-manual_cultivos_pro_huerta_-_cerbas.pdf"></Label>
             </StackLayout>

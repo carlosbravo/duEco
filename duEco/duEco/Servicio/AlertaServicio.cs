@@ -36,6 +36,12 @@ namespace duEco.Servicio
             return objAlerta.ConsultarTodas(idUser);
         }
 
+        internal static List<AlertaModel> AlertasPorHuerta(string idHuerta)
+        {
+            var objAlerta = new AlertaModel();           
+            return objAlerta.ConsultarPorHuerta(idHuerta);
+        }
+
         internal static List<AlertaModel> AlertasPorDia(string userLog, DateTime fecha)
         {
             var objAlerta = new AlertaModel();
