@@ -60,10 +60,5 @@ namespace duEco.View
         {
             ((NavigationPage)this.Parent).PushAsync(new View.Calendario());
         }
-
-        private void btnCalendario_Clicked(object sender, EventArgs e)
-        {
-            ((NavigationPage)this.Parent).PushAsync(new View.Calendario());
-        }
     }
 }
