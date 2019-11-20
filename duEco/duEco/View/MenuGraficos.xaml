@@ -8,25 +8,46 @@
                     <Style TargetType="Button">
                         <Setter Property="BackgroundColor" Value="MediumSeaGreen"/>
                         <Setter Property="TextColor" Value="White"/>
-                        <Setter Property="BorderRadius" Value="20"/>
+                        <Setter Property="BorderRadius" Value="5"/>
+                    </Style>
+
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="#539539"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                        <Setter Property="FontSize" Value="Medium"/>
                     </Style>
                 </ResourceDictionary>
             </Page.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="lblHuerta"
-                    Text="Seleccione una Huerta"                         
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand"/>
-            <Picker x:Name="cmbHuertas"
-                    Title="Huerta" 
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand"
-                    ItemDisplayBinding="{Binding Nombre}"/>
-            <Button x:Name="btnVerGrafico" 
-                    Text="Alertas por Prioridad" 
-                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
-                    Clicked="BtnVerGrafico_Clicked"/>
+        <StackLayout BackgroundColor="Transparent">
+            <TableView>
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label x:Name="lblHuerta"
+                                        Text="Seleccione Huerta"                         
+                                        VerticalOptions="CenterAndExpand"/>
+                                <Picker x:Name="cmbHuertas"
+                                        Title="(e.g. Aromáticas)" 
+                                        VerticalOptions="CenterAndExpand" 
+                                        HorizontalOptions="EndAndExpand"
+                                        ItemDisplayBinding="{Binding Nombre}"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout>
+                                <Button x:Name="btnVerGrafico" 
+                                        Text="Alertas por Prioridad" 
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="CenterAndExpand" 
+                                        Clicked="BtnVerGrafico_Clicked"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

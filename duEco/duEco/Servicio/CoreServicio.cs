@@ -41,9 +41,11 @@ namespace duEco.Servicio
                 }
 
                 //TABLA PLANTA: CREACIÓN Y CARGA INICIAL
+                
+                db.DropTable<Entidades.tbl_Planta>();
                 var existPlanta = db.GetTableInfo("tbl_Planta"); //db.Query<Entidades.tbl_Usuario>("SELECT count(*) FROM sqlite_master WHERE type = 'Table' AND name = 'tbl_Planta' ");
                 if (existPlanta.Count == 0)
-                {                    
+                {
                     db.CreateTable<Entidades.tbl_Planta>();
                     if (db.Table<Entidades.tbl_Planta>().Count() == 0)
                     {

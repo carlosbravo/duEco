@@ -4,7 +4,15 @@
              x:Class="duEco.View.Calendario"
              xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
              Title="Calendario">
-    
+            <Page.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Button">
+                        <Setter Property="BackgroundColor" Value="MediumSeaGreen"/>
+                        <Setter Property="TextColor" Value="White"/>
+                        <Setter Property="BorderRadius" Value="5"/>
+                    </Style>
+                </ResourceDictionary>
+            </Page.Resources>   
     <ContentPage.Content>
 
         <ScrollView>
@@ -19,8 +27,8 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout BackgroundColor="#ECFCF4" Orientation="Vertical">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding Descripcion}"/>
+                                    <StackLayout Orientation="Horizontal" Padding="15,0" >
+                                        <Label Text="{Binding Descripcion}" BackgroundColor="Transparent" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center"/>
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>

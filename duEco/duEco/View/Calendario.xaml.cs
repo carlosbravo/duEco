@@ -49,7 +49,7 @@ namespace duEco.View
             foreach (AlertaModel Alerta in listaAlertas)
             {
                 SpecialDate oDate = new SpecialDate(Alerta.FechaHora);
-                oDate.BackgroundColor = Color.LightGreen;
+                oDate.BackgroundColor = Color.MediumSeaGreen;
                 oDate.Selectable = true;
                 calCalendario.SpecialDates.Add(oDate);
             }
@@ -76,7 +76,7 @@ namespace duEco.View
             catch (Exception x)
             {
                 throw x;
-            }
+            }            
         }        
 
         private void CalCalendario_DateClicked(object sender, DateTimeEventArgs e)

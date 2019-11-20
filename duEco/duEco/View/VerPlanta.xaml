@@ -37,21 +37,7 @@
 
                 <Label Text="Valor Nutricional" TextColor="Black" FontSize="Small" />
                 <Label x:Name="lblValor" HorizontalOptions="EndAndExpand" TextColor="#F4A401" />
-                
-                <TableView Intent="Settings">
-                        <TableRoot>
-                            <TableSection Title="Mas Info">
-                                <ViewCell>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Image Source="" />
-                                        <Label Text="" TextColor="#032C5B" />
-                                        <Label Text="right" HorizontalOptions="EndAndExpand" TextColor="#75D0E3" />
-                                    </StackLayout>
-                                </ViewCell>
-                            </TableSection>
-                        </TableRoot>
-                    </TableView>
-               
+              
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
